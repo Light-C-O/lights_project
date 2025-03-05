@@ -16,7 +16,7 @@ try {
     // $stories = Story::findByCategory($categoryId, $options = array('limit' => 3));
     // $stories = Story::findByCategory($categoryId, $options = array('limit' => 3, 'offset' => 2));
 
-    $locationId = 8;
+    $locationId = 5 ;
     // $stories = Story::findByLocation($locationId);
     // $stories = Story::findByLocation($locationId, $options = array('limit' => 3));
     $stories = Story::findByLocation($locationId, $options = array('limit' => 4, 'offset' => 0));
@@ -43,15 +43,15 @@ family=Sahitya:wght@400;700&display=swap"
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-        <title>Stories xyz</title>
+        <title>Stories abc</title>
     </head>
     <body>
         <?php require_once "./etc/navbar.php"; ?>
         <?php require_once "./etc/flash_message.php"; ?>
         
         <div class = "container">
-            <!--
-            <div class="medium-port width-3" style="align-self: start">
+            
+            <!--div class="medium-port width-3" style="align-self: start">
                 <div class="content">
                     <button class="label">
                         <span class="dot"></span>
@@ -69,10 +69,12 @@ family=Sahitya:wght@400;700&display=swap"
                     </p>
                 </div>
                     <p class="date">Updated 13:45PM</p>
-            </div>
-            -->
+            </div-->
+            
             
             <?php foreach ($stories as $s) { ?>
+             
+                
                 <div class="medium-port width-3" style="align-self: start">
                     <div class="content">
                         <button class="label">
