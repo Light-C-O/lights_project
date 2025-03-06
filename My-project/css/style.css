@@ -50,7 +50,7 @@ p{
 }
 
 h3{
-    line-height: 12px;
+    line-height: 24px;
 }
 .imageDescription{
     font-family: "Roboto", serif;
@@ -206,6 +206,12 @@ h3{
 .medium-port .category{
     text-align: start;
     margin: 0px;
+}
+
+.medium-port img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
 

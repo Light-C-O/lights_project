@@ -4,8 +4,11 @@ class Story {
 
     public $id;
     public $headline;
+    public $short_headline;
+    public $status;
     public $article;
     public $img_url;
+    public $img_description;
     public $author_id;
     public $category_id;
     public $location_id;
@@ -18,8 +21,11 @@ class Story {
                 $this->id = $props["id"];
             }
             $this->headline    = $props["headline"];
+            $this->short_headline = $props["short_headline"];
+            $this->status= $props["status"];
             $this->article     = $props["article"];
             $this->img_url     = $props["img_url"];
+            $this->img_description     = $props["img_description"];
             $this->author_id   = $props["author_id"];
             $this->category_id = $props["category_id"];
             $this->location_id = $props["location_id"];
@@ -41,8 +47,11 @@ class Story {
         
             $params = [
                 ":headline"    => $this->headline,
+                ":short_headline"    => $this->short_headline,
+                ":status"     => $this->status,
                 ":article"     => $this->article,
                 ":img_url"     => $this->img_url,
+                ":img_description"     => $this->img_description,
                 ":author_id"   => $this->author_id,
                 ":category_id" => $this->category_id,
                 ":location_id" => $this->location_id,
@@ -50,7 +59,7 @@ class Story {
 
             if ($this->id === null) {
                 $sql = "INSERT INTO stories (" . 
-                       "headline, article, img_url, " . 
+                       "headline, short_headline, status, article, img_url, img_description," . 
                        "author_id, category_id, location_id" . 
                        ") VALUES (" . 
                        ":headline, :article, :img_url, " . 
@@ -60,8 +69,11 @@ class Story {
             else {
                 $sql = "UPDATE stories SET " . 
                        "headline    = :headline, " .
+                       "short_headline    = :short_headline, " .
+                       "status     = :status, " .
                        "article     = :article, " .
                        "img_url     = :img_url, " .
+                        "img_description     = :img_description, " .
                        "author_id   = :author_id, " .
                        "category_id = :category_id, " .
                        "location_id = :location_id, " .
