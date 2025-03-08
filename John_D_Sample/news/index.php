@@ -73,8 +73,6 @@ family=Sahitya:wght@400;700&display=swap"
             
             
             <?php foreach ($stories as $s) { ?>
-             
-                
                 <div class="medium-port width-3" style="align-self: start">
                     <div class="content">
                         <button class="label">

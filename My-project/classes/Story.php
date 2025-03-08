@@ -46,40 +46,42 @@ class Story {
             $conn = $db->getConnection();
         
             $params = [
-                ":headline"    => $this->headline,
-                ":short_headline"    => $this->short_headline,
-                ":status"     => $this->status,
-                ":article"     => $this->article,
-                ":img_url"     => $this->img_url,
-                ":img_description"     => $this->img_description,
-                ":author_id"   => $this->author_id,
+                ":headline" => $this->headline,
+                ":short_headline" => $this->short_headline,
+                ":status" => $this->status,
+                ":article" => $this->article,
+                ":img_url" => $this->img_url,
+                ":img_description" => $this->img_description,
+                ":author_id" => $this->author_id,
                 ":category_id" => $this->category_id,
                 ":location_id" => $this->location_id,
             ];
 
             if ($this->id === null) {
-                $sql = "INSERT INTO stories (" . 
-                       "headline, short_headline, status, article, img_url, img_description," . 
-                       "author_id, category_id, location_id" . 
-                       ") VALUES (" . 
-                       ":headline, :article, :img_url, " . 
-                       ":author_id, :category_id, :location_id" . 
-                       ")";
+                $sql = 
+                "INSERT INTO stories ".
+                "(headline, short_headline, status, article, img_url, img_description," . 
+                "author_id, category_id, location_id)" .
+                "VALUES " .
+                "(:headline, :article, :img_url, " . 
+                ":author_id, :category_id, :location_id" . 
+                ")";
             }
             else {
-                $sql = "UPDATE stories SET " . 
-                       "headline    = :headline, " .
-                       "short_headline    = :short_headline, " .
-                       "status     = :status, " .
-                       "article     = :article, " .
-                       "img_url     = :img_url, " .
-                        "img_description     = :img_description, " .
-                       "author_id   = :author_id, " .
-                       "category_id = :category_id, " .
-                       "location_id = :location_id, " .
-                       "updated_at  = :updated_at " .
-                       "WHERE id = :id";
-                       
+                $sql = 
+                "UPDATE stories SET " . 
+                "headline = :headline, " .
+                "short_headline = :short_headline, " .
+                "status = :status, " .
+                "article = :article, " .
+                "img_url = :img_url, " .
+                "img_description = :img_description, " .
+                "author_id = :author_id, " .
+                "category_id = :category_id, " .
+                "location_id = :location_id, " .
+                "updated_at  = :updated_at " .
+                "WHERE id = :id";
+                
                 $params[":id"] = $this->id;
                 $params[":updated_at"] = date("Y-m-d H:i:s");
             }
