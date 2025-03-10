@@ -53,10 +53,10 @@ h3{
     line-height: 24px;
 }
 .imageDescription{
-    font-family: "Roboto";
     font-weight: lighter;
     text-align: end;
     color: #6C6C6C;
+    margin-bottom: 0%;
 }
 .time{
     font-size: 15px;
@@ -141,8 +141,7 @@ h3{
 }
 .main img{
     width: 100%;
-    /* height: 576px; */
-    height: 100%;
+    height: 576px;
     object-fit: cover;
     filter:brightness(50%);
     margin-bottom: 5px;
@@ -153,7 +152,7 @@ h3{
 }
 .main .imageDescription h4{
     font-family: "Roboto";
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 100;
     text-align-last:right;
     line-height: 21px;
@@ -239,6 +238,7 @@ h3{
     background-color: white;
     gap: 5px;
     justify-content: space-between;
+    align-items: center;
 }
 .medium-land .content{
     flex:54%;
@@ -249,10 +249,10 @@ h3{
 
 }
 .medium-land .context{
-    padding-top: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
+    gap: 5px;
 }
 .medium-land .text{
     gap: 10px;
@@ -276,8 +276,8 @@ h3{
 }
 .medium-land img{
     width: 100%;
-    height: 140px;
-    object-fit: cover;
+    height: 230px;
+    object-fit: contain;
 }
 
 
