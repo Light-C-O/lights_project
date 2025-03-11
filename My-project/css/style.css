@@ -288,6 +288,7 @@ h3{
     justify-content: space-between;
     gap: 3px;
     border-bottom: 1px solid #ABABAB;
+    height: 33%;
 }
 .only-title h4{
     font-size: 14px;
