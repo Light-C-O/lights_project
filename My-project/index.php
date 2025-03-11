@@ -16,7 +16,7 @@ try {
     $cultureId = 2;
     $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 1, 'offset' => 0));
     $sportId = 1;
-    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 1, 'offset' => 0));
+    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 2, 'offset' => 0));
 
     // $stories = Story::findByCategory($categoryId);
     // $stories = Story::findByCategory($categoryId, $options = array('limit' => 3));
@@ -28,7 +28,7 @@ try {
 
     // $stories = Story::findByLocation($locationId);
     // $stories = Story::findByLocation($locationId, $options = array('limit' => 3));
-    $stories = Story::findByLocation($locationId, $options = array('limit' => 3, 'offset' => 3 ));
+    $stories = Story::findByLocation($locationId, $options = array('limit' => 2, 'offset' => 1 ));
 }
 catch (Exception $e) {
     echo $e->getMessage();
@@ -133,8 +133,8 @@ catch (Exception $e) {
         </div>
         
         <div class="secTier container-no-padding">
-            <?php foreach ($stories as $s) { ?>
-                <div class="section3 width-6">
+            <div class="section3 width-6">
+                <?php foreach ($stories as $s) { ?>
                     <div class="medium-land">
                         <!-- <div class="content"> -->
                             <div class="image">
@@ -171,65 +171,42 @@ catch (Exception $e) {
                             </div>
                         </div>
                     </div>
+                <?php } ?>
+            </div>
+
+            <div class="section4 width-6">
+                <div class="top">
+                    <?php foreach ($sportStories as $s) { ?>
+                        <div class="medium-port">
+                            <div class="content">
+                                <?php
+                                    if ($s->status = 0){
+                                        echo(
+                                            "<button class='label'>
+                                                <span class='dot'></span>
+                                                <div class='live'>
+                                                    <p>Live</p>
+                                                </div>
+                                            </button>"
+                                        );
+                                    }
+                                ?>
+                                <img src="<?= $s->img_url?>" />
+                                <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
+                                <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
+                                <h3 class="title">
+                                    <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
+                                </h3>
+                                <p>
+                                    <?= substr($s->article, 0, 100)?>...
+                                </p>
+                            </div>
+                            <p class="date"><?= $s->updated_at ?></p>
+                        </div>
+                    <?php } ?>
                 </div>
 
-                <div class="section4 width-6">
-                    <div class="top">
-                        <div class="medium-port">
-                            <div class="content">
-                                <?php
-                                    if ($s->status = 0){
-                                        echo(
-                                            "<button class='label'>
-                                                <span class='dot'></span>
-                                                <div class='live'>
-                                                    <p>Live</p>
-                                                </div>
-                                            </button>"
-                                        );
-                                    }
-                                ?>
-                                <img src="<?= $s->img_url?>" />
-                                <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
-                                <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                                <h3 class="title">
-                                    <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                                </h3>
-                                <p>
-                                    <?= substr($s->article, 0, 100)?>...
-                                </p>
-                            </div>
-                            <p class="date"><?= $s->updated_at ?></p>
-                        </div>
-
-                        <div class="medium-port">
-                            <div class="content">
-                                <?php
-                                    if ($s->status = 0){
-                                        echo(
-                                            "<button class='label'>
-                                                <span class='dot'></span>
-                                                <div class='live'>
-                                                    <p>Live</p>
-                                                </div>
-                                            </button>"
-                                        );
-                                    }
-                                ?>
-                                <img src="<?= $s->img_url?>" />
-                                <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
-                                <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                                <h3 class="title">
-                                    <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                                </h3>
-                                <p>
-                                    <?= substr($s->article, 0, 100)?>...
-                                </p>
-                            </div>
-                            <p class="date"><?= $s->updated_at ?></p>
-                        </div>
-                    </div>
-
+                <?php foreach ($cultureStories as $s) { ?>
                     <div class="medium-land">
                         <div class="content">
                             <div class="image">
@@ -266,74 +243,7 @@ catch (Exception $e) {
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
-        </div>
-        
-        <div class= "container">
-            <?php foreach ($cultureStories as $s) { ?>
-                <div class="medium-port width-3" style="align-self: start">
-                    <div class="content">
-                        <button class="label">
-                            <span class="dot"></span>
-                            <div class="live">
-                                <p>Live</p>
-                            </div>
-                        </button>
-        
-                        <img src="<?= $s->img_url ?>" />
-                        <p class="imageDescription"><i>Image: Board of Director</i></p>
-                        <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                        <h3 class="title">
-                            <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                        </h3>
-                        <p>
-                            <?= substr($s->article, 0, 500)?>...
-                        </p>
-                        <p class="date"><?= $s->updated_at ?></p>
-                    </div>
-                </div>        
-            <?php } ?>
-        </div>
-
-
-        <div class= "container">
-            <?php foreach ($sportStories as $s) { ?>
-                    <div class="medium-port width-3">
-                        <div class="content">
-                            <button class="label">
-                                <span class="dot"></span>
-                                <div class="live">
-                                    <p>Live</p>
-                                </div>
-                            </button>
-                            <img src="<?= $s->img_url ?>" />
-                            <p class="imageDescription"><i>Image: <?= $s->img_description ?></i></p>
-                            <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                            <h3 class="title">
-                                <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                            </h3>
-                            <p>
-                                <?= substr($s->article, 0, 500)?>...
-                            </p>
-                            <p class="date"><?= $s->updated_at ?></p>
-                        </div>
-                    </div>        
-            <?php } ?>
-
-            <div class="width-3">
-            <?php foreach ($sportStories as $s) { ?>
-                    <div>
-                        <div class="content">
-                            <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                            <h3 class="title">
-                                <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                            </h3>
-                         
-                     
-                        </div>
-                    </div>        
-            <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </body>
