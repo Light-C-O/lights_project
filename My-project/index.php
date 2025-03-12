@@ -11,17 +11,25 @@ try {
     // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3));
     // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
 
-    $politicsId = 3;
-    $politicsStories = Story::findByCategory($politicsId, $options = array('limit' => 3, 'offset' => 0));
+    $sportId = 1;
+    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 1, 'offset' => 0));
+
     $cultureId = 2;
     $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 1, 'offset' => 0));
-    $sportId = 1;
-    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 2, 'offset' => 0));
+
+    $politicsId = 3;
+    $politicsStories = Story::findByCategory($politicsId, $options = array('limit' => 3, 'offset' => 0));
+
+    $obituarylId = 4;
+    $obituarylStories = Story::findByCategory($obituarylId, $options = array('limit' => 1, 'offset' => 0 ));
+
+    $crimeId = 5;
+    $crimeStories = Story::findByCategory($crimeId, $options = array('limit' => 1, 'offset' => 1 ));
 
     // $stories = Story::findByCategory($categoryId);
     // $stories = Story::findByCategory($categoryId, $options = array('limit' => 3));
-    $generalId = 4;
-    $generalStories = Story::findByCategory($generalId, $options = array('limit' => 3, 'offset' => 1 ));
+    // $generalId = 0;
+    // $generalStories = Story::findByCategory($generalId, $options = array('limit' => 3, 'offset' => 1 ));
 
 
     $locationId = 1;
@@ -134,7 +142,7 @@ catch (Exception $e) {
         
         <div class="secTier container-no-padding">
             <div class="section3 width-6">
-                <?php foreach ($stories as $s) { ?>
+                <?php foreach ($crimeStories as $s) { ?>
                     <div class="medium-land">
                         <!-- <div class="content"> -->
                             <div class="image">
@@ -206,7 +214,7 @@ catch (Exception $e) {
                     <?php } ?>
                 </div>
 
-                <?php foreach ($cultureStories as $s) { ?>
+                <?php foreach ($obituarylStories as $s) { ?>
                     <div class="medium-land">
                         <div class="content">
                             <div class="image">
