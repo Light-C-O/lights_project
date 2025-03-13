@@ -98,7 +98,7 @@ CREATE TABLE `stories` (
   `id` int(11) NOT NULL,
   `headline` varchar(255) NOT NULL,
   `short_headline` varchar(100) NOT NULL,
-  `status` text NOT NULL,
+  `status` int(1) NOT NULL,
   `article` longtext NOT NULL,
   `img_url` varchar(50) NOT NULL,
   `img_description` text NOT NULL,
