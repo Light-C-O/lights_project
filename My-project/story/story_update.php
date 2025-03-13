@@ -9,39 +9,44 @@ try{
         throw new Exception("Invaild request parameters");
     }
     $id = $_POST["id"];
-    //find the id of the already existing course
-    $course = Course::findById($id);
-    //if there is no course to update, meaning no id found, throw an exception meassage
-    if($course === null) {
-        throw new Exception("Course not found");
+    //find the id of the already existing story
+    $story = Story::findById($id);
+    //if there is no story to update, meaning no id found, throw an exception meassage
+    if($story === null) {
+        throw new Exception("Story not found");
     }
     //input the clas into $validator
-    $validator = new CourseFormValidator($_POST);
+    $validator = new StoryFormValidator($_POST);
     //check if the input the user is has reach the requirements
     $valid = $validator->validate();
     //if it did
     if($valid) {
         //edit and input the changes with the already existing data
         $data = $validator->data();
-        $course->title = $data["title"];
-        $course->description = $data["description"];
-        $course->code = $data["code"];
-        $course->department_id = $data["department_id"];
+        $story->headline = $data["headline"];
+        $story->short_headline = $data["short_headline"];
+        $story->status = $data["status"];
+        $story->article = $data["article"];
+        $story->img_url = $data["img_url"];
+        $story->img_description = $data["img_description"];
+        $story->author_id = $data["author_id"];
+        $story->category_id = $data["category_id"];
+        $story->location_id = $data["location_id"];
         //save the changes
-        $course->save();
-    //if everything goes well, display a flash message and go back to the index.php (All Courses page) to see the changes
+        $story->save();
+    //if everything goes well, display a flash message and go back to the index.php (All Stories page) to see the changes
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
         //send a flash success message if done correctly
         $_SESSION["flash"] = [ 
-            "message" => "Course has been updated",
+            "message" => "Story has been updated",
             "type" =>"success" 
         ];
     redirect("index.php");
     }
     else {
-        //if everything did not go well, it will go to the course_edit.php and user should settle the errors shown
+        //if everything did not go well, it will go to the story_edit.php and user should settle the errors shown
         $errors = $validator->errors();
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -49,10 +54,10 @@ try{
         $_SESSION["form-data"] = $_POST;
         $_SESSION["form-errors"] = $errors;
         $_SESSION["flash"] = [ 
-            "message" => "Failed update course",
+            "message" => "Failed update story",
             "type" =>"failed"
         ];
-        redirect("course_edit.php?id=$id");
+        redirect("story_edit.php?id=$id");
     }
 } //exit once out of use
 catch (Exception $ex) {

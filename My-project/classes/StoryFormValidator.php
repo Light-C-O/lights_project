@@ -26,37 +26,46 @@ class StoryFormValidator extends FormValidator {
 
         //Status
         if(!$this->isPresent("status")) {
-            $this->errors["status"] = "Please state the status";
+            $this->errors["status"] = "Please pick the status";
         }
-        else if(!$this->maxLength("status", 1)) {
-            $this->errors['status'] = "Status must be no more then 1 characters long";
-        }
-        else if(!$this->isMatch("status", '/^[0-1]{1}$/')) {
-            $this->errors['status'] = "Must be exactly 1 character. Format: [1 = live 0 = not live]";
+        //Article
+        if(!$this->isPresent("article")) {
+            $this->errors["article"] = "Please state the article";
         }
 
-        //Description
-        if(!$this->isPresent("description")) {
-            $this->errors["description"] = "Please state the description";
-        }
-        else if(!$this->minLength("description", 20)) {
-            $this->errors['description'] = "Must be aleast 20 characters long";
-        }
-        else if(!$this->maxLength("description", 256)) {
-            $this->errors['description'] = "Description must be no more 256 characters long";
+        //Image
+        if(!$this->isPresent("img_url")) {
+            $this->errors["img_url"] = "Please upload img format [images/name]";
         }
 
-        //Code
-        if(!$this->isPresent("code")) {
-            $this->errors["code"] = "Please state the code";
-        }
-        else if(!$this->isMatch("code", '/^[A-Z]{3}-[0-9]{4}$/')) {
-            $this->errors['code'] = "Must be exactly 8 characters. Format: [ABC-1234]";
+        //Image description
+        if(!$this->isPresent("img_description")) {
+            $this->errors["img_description"] = "Please description the image";
         }
 
-        //Department
-        if(!$this->isPresent("department_id")) {
-            $this->errors["department_id"] = "Please state the department";
+        //Author
+        if(!$this->isPresent("author_id")) {
+            $this->errors["author_id"] = "Please state the author";
+        }
+        
+        //Category
+        if(!$this->isPresent("category_id")) {
+            $this->errors["category_id"] = "Please state the category";
+        }
+        
+        //Location
+        if(!$this->isPresent("location_id")) {
+            $this->errors["location_id"] = "Please state the location";
+        }
+
+        //Created
+        if(!$this->isPresent("created_at")) {
+            $this->errors["created_at"] = "Please state the created date";
+        }
+        
+        //Updated
+        if(!$this->isPresent("updated_at")) {
+            $this->errors["updated_at"] = "Please state the updated date";
         }
 
         return count($this->errors) === 0;

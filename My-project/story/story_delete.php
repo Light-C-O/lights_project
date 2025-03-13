@@ -12,14 +12,14 @@ try{
     }
     //needs an id
     $id = $_POST["id"];
-    //find the course
-    $course = Course::findById($id);
-    //if the course is empty, there is no course to delete, throw an exception
-    if($course === null) {
-        throw new Exception("Course not found");
+    //find the story
+    $story = Story::findById($id);
+    //if the story is empty, there is no story to delete, throw an exception
+    if($story === null) {
+        throw new Exception("Story not found");
     }
-    //if course has been found and an id is there, delete the course requested
-    $course->delete();
+    //if story has been found and an id is there, delete the story requested
+    $story->delete();
 
     //start session for the flash message
     if (session_status() === PHP_SESSION_NONE) {
@@ -27,7 +27,7 @@ try{
     }
     //send a flash success message if done correctly
     $_SESSION["flash"] = [ 
-        "message" => "Course has been deleted",
+        "message" => "Story has been deleted",
         "type" =>"success" 
     ];
     //redirect to the browser to index page to see the result

@@ -3,32 +3,32 @@ require_once "../etc/config.php";
 require_once "../etc/flash_message.php";
 
 try {
-    //If storing course went wrong throw an error
+    //If storing story went wrong throw an error
     if($_SERVER["REQUEST_METHOD"] !=="POST") {
         throw new Exception("Invaild request method");
     }
     //check the class
-    $validator = new CourseFormValidator($_POST);
+    $validator = new StoryFormValidator($_POST);
     //input that the validate function into $vaild
     $valid = $validator->validate();
 
     //it is valid, meaning the information the user hs enter had reached the requirements, 
     if($valid) {
         $data = $validator->data();
-        //make the new course
-        $course =  new Course($data);
+        //make the new story
+        $story =  new Story($data);
         // save it 
-        $course->save();
+        $story->save();
         
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
         //send a flash success message if done correctly
         $_SESSION["flash"] = [ 
-            "message" => "Course has been created",
+            "message" => "Story has been created",
             "type" =>"success" 
         ];
-        //then go back to the index page see it the new course
+        //then go back to the index page see it the new story
         redirect("index.php");
     }
     else {
@@ -40,12 +40,12 @@ try {
         $_SESSION["form-data"] = $_POST;
         $_SESSION["form-errors"] = $errors;
         $_SESSION["flash"] = [ 
-            "message" => "Error creating a course",
+            "message" => "Error creating a story",
             "type" =>"failed" 
         ];
 
         //once the errors are shown, it goes to the create page to fix the issue made
-        redirect("course_create.php");
+        redirect("story_create.php");
     }
 }
 catch(Exception $ex) {
