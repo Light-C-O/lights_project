@@ -29,7 +29,7 @@ try {
             "type" =>"success" 
         ];
         //then go back to the index page see it the new course
-        redirect("index.php");
+        redirect("author_table.php");
     }
     else {
         //if there is a problem, show the errors made and send a flash error message
@@ -45,7 +45,7 @@ try {
         ];
 
         //once the errors are shown, it goes to the create page to fix the issue made
-        redirect("course_create.php");
+        redirect("author_create.php");
     }
 }
 catch(Exception $ex) {

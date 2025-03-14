@@ -36,17 +36,21 @@ $stories = Story::findAll();
                 <tbody>
                     <!-- a loop to push out each story with their info displayed  -->
                     <?php foreach($stories as $story): 
-                        $sto = sto::findById($story->department_id);
-                        $department = aur::findById($story->department_id);
-                        $department = Department::findById($story->department_id);
+                        $author = Author::findById($story->author_id);
+                        $category = Category::findById($story->category_id);
+                        $location = Location::findById($story->location_id);
                         ?>
                         <tr class="obj">
-                            <td class = "te"><?= $story->title ?></td>
-                            <td class = "dn"><?= $story->description ?></td>
-                            <td class = "ce"><?= $story->code ?></td>
-                            <td class = "dt"><?= $aut->$author->first_name, $author->last_name ?></td>
-                            <td class = "dt"><?= $department->title ?></td>
-                            <td class = "dt"><?= $department->title ?></td>
+                            <td class = "te"><?= $story->headline ?></td>
+                            <td class = "dn"><?= $story->short_headline ?></td>
+                            <td class = "dn"><?= $story->status ?></td>
+                            <td class = "dn"><?= $story->article ?></td>
+                            <td class = "dn"><?= $story->img_url ?></td>
+                            <td class = "ce"><?= $story->img_description ?></td>
+                            <td class = "dt"><?= $author->$author->first_name, $author->last_name ?></td>
+                            <td class = "dt"><?= $category->name ?></td>
+                            <td class = "dt"><?= $location->name ?></td>
+
                             <td class = "an">
                                 <a href="story_edit.php?id=<?= $story->id?>">Edit</a>
                                 <form class="form-delete"action="story_delete.php" method="post">

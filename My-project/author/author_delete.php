@@ -31,7 +31,7 @@ try{
         "type" =>"success" 
     ];
     //redirect to the browser to index page to see the result
-    redirect("index.php");
+    redirect("author_table.php");
 }//exit once out of use
 catch (Exception $ex) {
     echo $ex->getMessage();

@@ -104,8 +104,8 @@ catch(Exception $ex) {
             </p>
             <!-- once clicked, it will go to the story_update.php -->
             <button type="submit">Update</button>
-            <!-- Will discard the new input, take the default input and go mack to the index.php unchanged -->
-            <a href="index.php">Cancel</a>
+            <!-- Will discard the new input, take the default input and go mack to the story_table.php unchanged -->
+            <a href="story_table.php">Cancel</a>
         </form>
         <?php require_once "../etc/flash_message.php";?>
     </body>

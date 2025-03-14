@@ -4,9 +4,6 @@ require_once "../etc/config.php";
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
-//pull out all the info from the Departement classs
-$departments = Department::findAll();
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +33,7 @@ $departments = Department::findAll();
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>
             <!-- click on cancel to back to the All Authors page -->
-            <a href="index.php">Cancel</a>
+            <a href="author_table.php">Cancel</a>
         </form>
     </body>
 </hmtl>

@@ -30,8 +30,8 @@ try{
         "message" => "Story has been deleted",
         "type" =>"success" 
     ];
-    //redirect to the browser to index page to see the result
-    redirect("index.php");
+    //redirect to the browser to story_table page to see the result
+    redirect("story_table.php");
 }//exit once out of use
 catch (Exception $ex) {
     echo $ex->getMessage();

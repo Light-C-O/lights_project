@@ -108,7 +108,7 @@ $locations = Location::findAll();
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>
             <!-- click on cancel to back to the All Stories page -->
-            <a href="index.php">Cancel</a>
+            <a href="story_table.php">Cancel</a>
         </form>
     </body>
 </hmtl>
