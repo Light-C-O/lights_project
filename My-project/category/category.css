@@ -1,0 +1,116 @@
+/* General */
+
+    /* for the un-ordered list style img (navbar.php) */
+    li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    /* Set the list image as background image*/
+        li::before {
+            content: '';
+            display: inline-block;
+            margin-right: 10px;
+
+            /* Height of the list image*/
+            height: 20px;
+
+            /* Width of the list image*/
+            width: 20px;
+            background-image: url('../spiral.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+/* style for flash_message */
+    .alert {
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    }
+.alert-success {
+    font-weight: bold;
+    color: #33691E;
+    background-color: #B1FF91;
+    border-color: #33691E;
+}
+.alert-failed {
+    font-weight: bold;
+    color: #FC0029;
+    background-color: #FEB1C1;
+    border-color: #FC0029;
+    }
+
+/* Related to the index.php */
+    h1{
+        background-color: #FFC142; 
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, td {
+        border: 1px solid black;
+    }
+
+    th{
+        border: 3px solid black;
+        padding: 5px;
+        text-align: center;
+    }
+    td {
+        padding: 5px;
+        text-align: left;
+    }
+    th, .ti{
+        background-color: #FF66B2;
+    }
+    th, .des{
+        background-color: #E889FF;
+    }
+    th, .cre{
+        background-color: #33FFFF;
+    }
+    th, .sem{
+        background-color: #66FF66;
+    }
+    th, .act{
+        background-color: #FFFF66;
+    }
+    .te{
+        background-color: #FFAED7;
+    }
+    .dn{
+        background-color: #E5CCFF;
+    }
+    .cs{
+        background-color: #CCFFFF;
+        text-align: center;
+    }
+    .sr{
+        text-transform:capitalize;
+        background-color: #CCFFCC;
+        text-align: center;
+    }
+    .an{
+        background-color: #FFFFCC;
+        text-align: center;
+    }
+    .form-delete {
+        display: inline;
+    }
+
+/* Ralated to the module_edit.php */
+    /* for the un-ordered list style img  */
+    form{
+        margin-bottom: 5px;
+    }
+    /* error message in module_edit and module_create.php*/
+    .error {
+        color:red;
+        text-decoration: underline; 
+        margin: 5px;
+    }

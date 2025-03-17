@@ -14,9 +14,9 @@ try{
         throw new Exception("Invaild request parameters");
     }
     $id = $_GET["id"];
-    $author = Author::findById($id);
-    if($author === null) {
-        throw new Exception("Author not found");
+    $location = Location::findById($id);
+    if($location === null) {
+        throw new Exception("Location not found");
     }
 }
 catch(Exception $ex) {
@@ -29,31 +29,25 @@ catch(Exception $ex) {
 <html lang="en">
     <head>
         <title>Edit</title>
-        <link rel="stylesheet" href="author.css">
+        <link rel="stylesheet" href="location.css">
     </head>
 
     <body>
     <?php require_once '../etc/navbar.php'?>
-        <h2>Edit the Author Form</h2>
+        <h2>Edit the Location Form</h2>
         <!-- go to update when clicking the submit button -->
-        <form action="author_update.php" method="POST">
-            <!-- hide the id of the author -->
-            <input type="hidden" name="id" value="<?= $author->id ?>">
+        <form action="location_update.php" method="POST">
+            <!-- hide the id of the location -->
+            <input type="hidden" name="id" value="<?= $location->id ?>">
             <p>
-                First Name:
+                Name:
                 <!-- the old(); states that the former input will still be stored as a default -->
-                <input type="text" name="first_name" value="<?= old("first_name", $author->first_name) ?>"><span class="error"><?= error("first_name") ?></span>
+                <input type="text" name="name" value="<?= old("name", $location->name) ?>"><span class="error"><?= error("name") ?></span>
             </p>
-
-            <p>
-                Last Name:
-                <!-- the old(); states that the former input will still be stored as a default -->
-                <input type="text" name="last_name" value="<?= old("last_name", $author->last_name) ?>"><span class="error"><?= error("last_name") ?></span>
-            </p>
-            <!-- once clicked, it will go to the author_update.php -->
+            <!-- once clicked, it will go to the course_update.php -->
             <button type="submit">Update</button>
             <!-- Will discard the new input, take the default input and go mack to the index.php unchanged -->
-            <a href="author_table.php">Cancel</a>
+            <a href="location_table.php">Cancel</a>
         </form>
         <?php require_once "../etc/flash_message.php";?>
     </body>

@@ -19,6 +19,8 @@ $authors = Author::findAll();
         <!-- the navbar file and the flash_messsage file -->
         <?php require_once "../etc/navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
+
+        <p><a href="edit_navbar.php">Edit another</a></p>
         <!-- link to the location of creating a new author -->
         <p><a href="author_create.php">Make New Author</a></p>
         <!-- check the number of authors, if more than 0, display all, using the findAll function above that is in $authors-->
@@ -26,10 +28,8 @@ $authors = Author::findAll();
             <table>
                 <thead>
                     <tr>
-                        <th class= "ti">Title</th>
-                        <th class= "des">Description</th>
-                        <th class= "cre">Credit Points</th>
-                        <th class= "sem">Semester</th>
+                        <th class= "ti">First Name</th>
+                        <th class= "des">Last Name</th>
                         <th class= "act">Actions</th>
                     </tr>
                 </thead>

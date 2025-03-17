@@ -19,6 +19,7 @@ $stories = Story::findAll();
         <!-- the navbar file and the flash_messsage file -->
         <?php require_once "../etc/navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
+        <p><a href="edit_navbar.php">Edit another</a></p>
         <!-- link to the location of creating a new story -->
         <p><a href="story_create.php">Make New Story</a></p>
         <!-- check the number of stories, if more than 0, display all, using the findAll function above that is in $stories-->
@@ -26,10 +27,15 @@ $stories = Story::findAll();
             <table>
                 <thead>
                     <tr>
-                        <th class= "ti">Title</th>
-                        <th class= "des">Description</th>
-                        <th class= "co">Code</th>
-                        <th class= "dep">Department</th>
+                        <th class= "hd">Headline</th>
+                        <th class= "shd">Short headline</th>
+                        <th class= "st">Status</th>
+                        <th class= "ar">Article</th>
+                        <th class= "im">Image</th>
+                        <th class= "imd">Image description</th>
+                        <th class= "au">Author</th>
+                        <th class= "ca">Category</th>
+                        <th class= "ln">Location</th>
                         <th class= "act">Actions</th>
                     </tr>
                 </thead>
@@ -41,15 +47,15 @@ $stories = Story::findAll();
                         $location = Location::findById($story->location_id);
                         ?>
                         <tr class="obj">
-                            <td class = "te"><?= $story->headline ?></td>
-                            <td class = "dn"><?= $story->short_headline ?></td>
-                            <td class = "dn"><?= $story->status ?></td>
-                            <td class = "dn"><?= $story->article ?></td>
-                            <td class = "dn"><?= $story->img_url ?></td>
-                            <td class = "ce"><?= $story->img_description ?></td>
-                            <td class = "dt"><?= $author->$author->first_name, $author->last_name ?></td>
-                            <td class = "dt"><?= $category->name ?></td>
-                            <td class = "dt"><?= $location->name ?></td>
+                            <td class = "hed"><?= $story->headline ?></td>
+                            <td class = "sho"><?= $story->short_headline ?></td>
+                            <td class = "sat"><?= $story->status ?></td>
+                            <td class = "art"><?= $story->article ?></td>
+                            <td class = "url"><?= $story->img_url ?></td>
+                            <td class = "dep"><?= $story->img_description ?></td>
+                            <td class = "aut"><?= $author->$author->first_name , $author->last_name ?></td>
+                            <td class = "cat"><?= $category->name ?></td>
+                            <td class = "loc"><?= $location->name ?></td>
 
                             <td class = "an">
                                 <a href="story_edit.php?id=<?= $story->id?>">Edit</a>

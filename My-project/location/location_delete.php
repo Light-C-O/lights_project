@@ -12,14 +12,14 @@ try{
     }
     //needs an id
     $id = $_POST["id"];
-    //find the course
-    $course = Course::findById($id);
-    //if the course is empty, there is no course to delete, throw an exception
-    if($course === null) {
-        throw new Exception("Course not found");
+    //find the location
+    $location = Location::findById($id);
+    //if the location is empty, there is no location to delete, throw an exception
+    if($location === null) {
+        throw new Exception("Location not found");
     }
-    //if course has been found and an id is there, delete the course requested
-    $course->delete();
+    //if location has been found and an id is there, delete the location requested
+    $location->delete();
 
     //start session for the flash message
     if (session_status() === PHP_SESSION_NONE) {
@@ -27,11 +27,11 @@ try{
     }
     //send a flash success message if done correctly
     $_SESSION["flash"] = [ 
-        "message" => "Course has been deleted",
+        "message" => "Location has been deleted",
         "type" =>"success" 
     ];
-    //redirect to the browser to index page to see the result
-    redirect("index.php");
+    //redirect to the browser to location_table page to see the result
+    redirect("location_table.php");
 }//exit once out of use
 catch (Exception $ex) {
     echo $ex->getMessage();
