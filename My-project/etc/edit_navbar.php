@@ -33,7 +33,7 @@ require_once 'config.php';
 </style>
 <ul class="edit_navbar">
     <li><a href="/intProj/lights_project/My-project/index.php">Home Page</a></li>
-    <li><a href="/intProj/lights_project/My-project/story/story_table.php">Story</a></li>
+    <li><a href="/intProj/lights_project/My-project/story/sstory_table.php">Story</a></li>
     <li><a href="/intProj/lights_project/My-project/category/category_table.php">Category</a></li>
     <li><a href="/intProj/lights_project/My-project/author/author_table.php">Author</a></li>
     <li><a href="/intProj/lights_project/My-project/location/location_table.php">Location</a></li>

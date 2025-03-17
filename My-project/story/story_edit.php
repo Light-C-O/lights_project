@@ -105,8 +105,8 @@ catch(Exception $ex) {
             </p>
             <!-- once clicked, it will go to the story_update.php -->
             <button type="submit">Update</button>
-            <!-- Will discard the new input, take the default input and go mack to the story_table.php unchanged -->
-            <a href="story_table.php">Cancel</a>
+            <!-- Will discard the new input, take the default input and go mack to the sstory_table.php unchanged -->
+            <a href="sstory_table.php">Cancel</a>
         </form>
     </body>
 </html>

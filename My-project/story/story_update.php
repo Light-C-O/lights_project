@@ -43,7 +43,7 @@ try{
             "message" => "Story has been updated",
             "type" =>"success" 
         ];
-    redirect("store_table.php");
+    redirect("sstory_table.php");
     }
     else {
         //if everything did not go well, it will go to the story_edit.php and user should settle the errors shown
