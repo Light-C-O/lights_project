@@ -1,12 +1,12 @@
 <?php
-class LocationFormValidator extends FormValidator {
+class CategoryFormValidator extends FormValidator {
     public function __construct ($data=[]) {
         parent::__construct($data);
     }
 
     //The requirments to made
     public function validate() {
-        //Table -- locations
+        //Table -- categories
 
         //Name
         if(!$this->isPresent("name")) {

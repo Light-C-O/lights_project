@@ -52,7 +52,7 @@ $locations = Location::findAll();
             </p>
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
-                Image description:
+                Image Description:
                 <input type="text" name="img_description" value="<?= old("img_description") ?>"><span class=" error"><?= error("img_description") ?><span>
             </p>
             <p>
@@ -63,7 +63,7 @@ $locations = Location::findAll();
                     <!-- a loop to dispaly an new author from the Author::findAll if added -->
                     <?php foreach($authors as $author): ?>
                     <!-- make an option to shows each new departemnt title -->
-                    <option value="<?= $author->id ?>"  <?= chosen("author_id", $author->id) ? "selected" : "" ?>><?= $author->first_name, $author->last_name ?></option>
+                    <option value="<?= $author->id ?>"  <?= chosen("author_id" , $author->id) ? "selected" : "" ?>><?= $author->first_name ,"", $author->last_name ?></option>
                     <?php endforeach?>
                 </select>
                 <span class=" error"><?= error("author_id") ?><span>
