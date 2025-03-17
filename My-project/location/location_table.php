@@ -17,10 +17,8 @@ $locations = Location::findAll();
     <body>
         <h1>Locations</h1>
         <!-- the navbar file and the flash_messsage file -->
-        <?php require_once "../etc/navbar.php";?>
+        <?php require_once "../etc/edit_navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
-
-        <p><a href="edit_navbar.php">Edit another</a></p>
         <!-- link to the location of creating a new location -->
         <p><a href="location_create.php">Make New Location</a></p>
         <!-- check the number of locations, if more than 0, display all, using the findAll function above that is in $locations-->
@@ -52,6 +50,5 @@ $locations = Location::findAll();
             <!-- if $locations is less than 0, meaning no locations, display the statement below -->
             <p>No locations found</p>
         <?php endif; ?>
-        <?php require '../etc/navbar.php'?>
     </body>
 </html>

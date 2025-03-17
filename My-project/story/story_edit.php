@@ -33,7 +33,8 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <?php require_once '../etc/navbar.php'?>
+    <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit Another Section</a></p>
+    <?php require_once "../etc/flash_message.php";?>
         <h2>Edit the Story Form</h2>
         <!-- go to update when clicking the submit button -->
         <form action="story_update.php" method="POST">
@@ -107,7 +108,6 @@ catch(Exception $ex) {
             <!-- Will discard the new input, take the default input and go mack to the story_table.php unchanged -->
             <a href="story_table.php">Cancel</a>
         </form>
-        <?php require_once "../etc/flash_message.php";?>
     </body>
 </html>
 <?php

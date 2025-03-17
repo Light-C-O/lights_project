@@ -17,9 +17,8 @@ $stories = Story::findAll();
     <body>
         <h1>Stories</h1>
         <!-- the navbar file and the flash_messsage file -->
-        <?php require_once "../etc/navbar.php";?>
+        <?php require_once "../etc/edit_navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
-        <p><a href="edit_navbar.php">Edit another</a></p>
         <!-- link to the location of creating a new story -->
         <p><a href="story_create.php">Make New Story</a></p>
         <!-- check the number of stories, if more than 0, display all, using the findAll function above that is in $stories-->
@@ -72,6 +71,6 @@ $stories = Story::findAll();
             <!-- if $storys is less than 0, meaning no stories, display the statement below -->
             <p>No stories found</p>
         <?php endif; ?>
-        <?php require "../etc/navbar.php";?>
+        <?php require "../etc/edit_navbar.php";?>
     </body>
 </html>

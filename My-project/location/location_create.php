@@ -15,7 +15,8 @@ if (session_status() === PHP_SESSION_NONE) {
     </head>
 
     <body>
-        <?php require_once "../etc/navbar.php";?>
+        <?php require_once "../etc/edit_navbar.php";?>
+        <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit another</a></p>
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new location -->
         <h2>New Location Form</h2>

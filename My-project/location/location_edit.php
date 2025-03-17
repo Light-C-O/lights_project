@@ -33,7 +33,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <?php require_once '../etc/navbar.php'?>
+    <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit Another Section</a></p>
         <h2>Edit the Location Form</h2>
         <!-- go to update when clicking the submit button -->
         <form action="location_update.php" method="POST">

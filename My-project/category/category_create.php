@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </head>
 
     <body>
-        <?php require_once "../etc/navbar.php";?>
+        <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit Another Section</a></p>
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new category -->
         <h2>New Category Form</h2>
