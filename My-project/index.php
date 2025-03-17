@@ -104,13 +104,12 @@ catch (Exception $e) {
 
                     <?php  
                         if($index == 0 ){ 
-                           echo "<div class='medium-port'>" ;
+                            echo "<div class='medium-port'>" ;
                         } else { 
                             echo "<div class='only-title'>" ;
                         
                         
                     } ?>
-                   
                         <div class="content">
                             <?php
                                 if ($s->status = 0){
