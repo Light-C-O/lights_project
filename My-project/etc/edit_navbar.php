@@ -2,9 +2,17 @@
 require_once 'config.php';
 ?>
 <style>
+    .wel{
+        justify-self: center;
+    }
+    .cho{
+        justify-self: center;
+    }
+    
     .edit_navbar{
         display: flex;
-        gap: 20px;
+        gap: 40px;
+        justify-content: center;
     }
     li{
         font-size: 20px;
@@ -12,6 +20,9 @@ require_once 'config.php';
         display: flex;
         align-items: center;
         list-style: none;
+    }
+    li a:hover{
+        color: #697033;
     }
 
     /* Set the list image as background image*/
@@ -31,6 +42,9 @@ require_once 'config.php';
         background-position: center; */
     }
 </style>
+<title>Edit Section</title>
+<h1 class= "wel">Welcome to Edit Section</h1>
+<h3 class="cho">Choose what to change</h3>
 <ul class="edit_navbar">
     <li><a href="/intProj/lights_project/My-project/index.php">Home Page</a></li>
     <li><a href="/intProj/lights_project/My-project/story/sstory_table.php">Story</a></li>

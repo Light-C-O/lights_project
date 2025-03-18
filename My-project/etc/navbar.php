@@ -12,6 +12,7 @@ catch (Exception $e) {
     .navbar{
         display: flex;
         gap: 20px;
+        justify-content: center;
     }
     li{
         font-size: 20px;

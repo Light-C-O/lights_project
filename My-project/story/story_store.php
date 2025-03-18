@@ -15,6 +15,7 @@ try {
     //it is valid, meaning the information the user hs enter had reached the requirements, 
     if($valid) {
         $data = $validator->data();
+        // $data["img_url"]="images/{$_FILES["img_url"]["name"]}";
         //make the new story
         $story =  new Story($data);
         // save it 

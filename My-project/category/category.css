@@ -1,10 +1,16 @@
 /* General */
 
+h1, .wel, h3, .cho{
+    display: none;
+}
     /* for the un-ordered list style img (navbar.php) */
     li {
         display: flex;
         align-items: center;
         list-style: none;
+    }
+    li a:hover{
+        color: #FC0029;
     }
 
     /* Set the list image as background image*/
