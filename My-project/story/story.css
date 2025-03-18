@@ -1,17 +1,14 @@
 /* General */
 
-h1, .wel, h3, .cho{
+.new a{
+    font-size: larger;
+    font-weight: 300;
+}
+.new a:hover{
+    font-weight: bolder;
+}
+.wel, .cho{
     display: none;
-}
-/* for the un-ordered list style img (navbar.php) */
-
-li {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
-li a:hover{
-    color: #FC0029;
 }
 
 /* Set the list image as background image*/
@@ -52,9 +49,12 @@ margin-bottom: 1rem;
     border-color: #FC0029;
     }
 
-/* Related to the index.php */
+/* Related to the tab.php */
 h1{
-    background-color: #F263CC; 
+    text-align: center;
+    /* background-color: #ffe6d9;  */
+    background-color: #cbf7ff; 
+    border: 2px solid #66FFFF;
 }
 /* table */
 table {
@@ -65,7 +65,7 @@ table, td {
     border: 1px solid black;
 }
 th{
-    border: 3px solid black;
+    border: 1px solid black;
     padding: 5px;
     text-align: center;
 }
@@ -73,76 +73,31 @@ tr:hover{
     background-color: rgbA(255, 255, 255, 0.5);
 }
 td {
-    padding: 5px;
+    padding: 3px;
     text-align: left;
 }
 /* table heads */
-th, .hd{
-    background-color: #66FFFF;
-}
-th, .shd{
-    background-color: #FFFF33;
-}
-th, .st{
-    background-color: #FFCC66;
-}
-th, .ar{
-    background-color: #CC99FF;
-}
-th, .im{
-    background-color: #66FFFF;
-}
-th, .imd{
-    background-color: #FFFF33;
-}
-th, .au{
-    background-color: #FFCC66;
-}
-th, .ca{
-    background-color: #CC99FF;
-}
-th, .ln{
-    background-color: #66FFFF;
+th, .thd{
+    background-color: #cbf7ff;
 }
 th, .act{
-    background-color: #66FF66;
+    background-color:  #66FFFF;
 }
 /* td */
-.hed{
-    background-color: #CCFFFF;
+.hed, .art, .url, .dep{
+    background-color: #f1fbff;
 }
+
 .sho{
-    background-color: #FFFFCC;
+    background-color: #f1fbff;
     text-align: center;
 }
-.sat{
-    background-color: #FFE5CC;
+.sat, .aut, .cat, .loc{
+    background-color: #f1fbff;
     text-align: center;
-}
-.art{
-    background-color: #E5CCFF;
-    text-align: center;
-}
-.url{
-    background-color: #CCFFFF;
-}
-.dep{
-    background-color: #FFFFCC;
-    text-align: center;
-}
-.aut{
-    background-color: #FFE5CC;
-    text-align: center;
-}
-.cat{
-    background-color: #E5CCFF;
-    text-align: center;
-}
-.loc{
-    background-color: #CCFFFF;
 }
 .an{
-    background-color: #CCFFCC;
+    background-color: #CCFFFF;
     text-align: center;
 }
 
@@ -152,11 +107,11 @@ th, .act{
     display: inline;
 }
 
-/* Related to course_edit.php */
+/* Related to story_edit.php */
     form{
         margin-bottom: 5px;
     }
-    /* error message in course_edit and course_create.php*/
+    /* error message in story_edit and story_create.php*/
     .error {
         color:red;
         text-decoration: underline; 

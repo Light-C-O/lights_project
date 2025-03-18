@@ -20,13 +20,13 @@ $locations = Location::findAll();
         <?php require_once "../etc/edit_navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
         <!-- link to the location of creating a new location -->
-        <p><a href="location_create.php">Make New Location</a></p>
+        <p class = "new"><a href="location_create.php">Make New Location</a></p>
         <!-- check the number of locations, if more than 0, display all, using the findAll function above that is in $locations-->
         <?php if (count($locations) > 0 ): ?>
             <table>
                 <thead>
                     <tr>
-                        <th class= "ti">Name</th>
+                        <th class= "nm">Name</th>
                         <th class= "act">Actions</th>
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@ $locations = Location::findAll();
                     <!-- a loop to push out each location with their info displayed  -->
                     <?php foreach($locations as $location): ?>
                         <tr>
-                            <td class = "te"><?= $location->name ?></td>
+                            <td class = "nme"><?= $location->name ?></td>
                             <td class = "an">
                                 <a href="location_edit.php?id=<?= $location->id?>">Edit</a>
                                 <form class="form-delete"action="location_delete.php" method="post">

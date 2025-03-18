@@ -1,19 +1,15 @@
 /* General */
 
-h1, .wel, h3, .cho{
+.new a{
+    font-size: larger;
+    font-weight: 300;
+}
+.new a:hover{
+    font-weight: bolder;
+}
+.wel, .cho{
     display: none;
 }
-
-    /* for the un-ordered list style img (navbar.php) */
-    li {
-        display: flex;
-        align-items: center;
-        list-style: none;
-    }
-    li a:hover{
-        color: #FC0029;
-    }
-
     /* Set the list image as background image*/
         li::before {
             content: '';
@@ -53,7 +49,9 @@ h1, .wel, h3, .cho{
 
 /* Related to the index.php */
     h1{
-        background-color: #FFC142; 
+        background-color: #FFFF99; 
+        text-align: center;
+        border: 2px solid #FFFF66;
     }
     table {
         width: 100%;
@@ -64,7 +62,7 @@ h1, .wel, h3, .cho{
     }
 
     th{
-        border: 3px solid black;
+        border: 1px solid black;
         padding: 5px;
         text-align: center;
     }
@@ -72,35 +70,16 @@ h1, .wel, h3, .cho{
         padding: 5px;
         text-align: left;
     }
-    th, .ti{
-        background-color: #FF66B2;
-    }
-    th, .des{
-        background-color: #E889FF;
-    }
-    th, .cre{
-        background-color: #33FFFF;
-    }
-    th, .sem{
-        background-color: #66FF66;
+    /* thead */
+    th, .nm{
+        background-color: #FFFF99;
     }
     th, .act{
         background-color: #FFFF66;
     }
-    .te{
-        background-color: #FFAED7;
-    }
-    .dn{
-        background-color: #E5CCFF;
-    }
-    .cs{
-        background-color: #CCFFFF;
-        text-align: center;
-    }
-    .sr{
-        text-transform:capitalize;
-        background-color: #CCFFCC;
-        text-align: center;
+    /* td */
+    .nme{
+        background-color: #f6f2cb;
     }
     .an{
         background-color: #FFFFCC;
@@ -110,12 +89,12 @@ h1, .wel, h3, .cho{
         display: inline;
     }
 
-/* Ralated to the module_edit.php */
+/* Ralated to the location_edit.php */
     /* for the un-ordered list style img  */
     form{
         margin-bottom: 5px;
     }
-    /* error message in module_edit and module_create.php*/
+    /* error message in location_edit and location_create.php*/
     .error {
         color:red;
         text-decoration: underline; 

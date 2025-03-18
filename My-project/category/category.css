@@ -1,18 +1,15 @@
 /* General */
 
-h1, .wel, h3, .cho{
+.new a{
+    font-size: larger;
+    font-weight: 300;
+}
+.new a:hover{
+    font-weight: bolder;
+}
+.wel, .cho{
     display: none;
 }
-    /* for the un-ordered list style img (navbar.php) */
-    li {
-        display: flex;
-        align-items: center;
-        list-style: none;
-    }
-    li a:hover{
-        color: #FC0029;
-    }
-
     /* Set the list image as background image*/
         li::before {
             content: '';
@@ -50,9 +47,11 @@ h1, .wel, h3, .cho{
     border-color: #FC0029;
     }
 
-/* Related to the index.php */
+/* Related to the tab.php */
     h1{
-        background-color: #FFC142; 
+        background-color: #FFCC99; 
+        text-align: center;
+        border: 2px solid #FFD98A;
     }
     table {
         width: 100%;
@@ -63,7 +62,7 @@ h1, .wel, h3, .cho{
     }
 
     th{
-        border: 3px solid black;
+        border: 1px solid black;
         padding: 5px;
         text-align: center;
     }
@@ -71,50 +70,33 @@ h1, .wel, h3, .cho{
         padding: 5px;
         text-align: left;
     }
-    th, .ti{
-        background-color: #FF66B2;
-    }
-    th, .des{
-        background-color: #E889FF;
-    }
-    th, .cre{
-        background-color: #33FFFF;
-    }
-    th, .sem{
-        background-color: #66FF66;
+    /* thead */
+    th, .nm{
+        background-color: #FFCC99;
     }
     th, .act{
-        background-color: #FFFF66;
+        background-color: #FFC142;
     }
-    .te{
-        background-color: #FFAED7;
-    }
-    .dn{
-        background-color: #E5CCFF;
-    }
-    .cs{
-        background-color: #CCFFFF;
+    /* td */
+    .cn{
+        background-color: #FFE5CC;
         text-align: center;
-    }
-    .sr{
-        text-transform:capitalize;
-        background-color: #CCFFCC;
-        text-align: center;
+        justify-content: start;
     }
     .an{
-        background-color: #FFFFCC;
+        background-color: #FFD98A;
         text-align: center;
     }
     .form-delete {
         display: inline;
     }
 
-/* Ralated to the module_edit.php */
+/* Ralated to the category_edit.php */
     /* for the un-ordered list style img  */
     form{
         margin-bottom: 5px;
     }
-    /* error message in module_edit and module_create.php*/
+    /* error message in category_edit and category_create.php*/
     .error {
         color:red;
         text-decoration: underline; 

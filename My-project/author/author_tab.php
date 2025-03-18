@@ -20,14 +20,14 @@ $authors = Author::findAll();
         <?php require_once "../etc/edit_navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
         <!-- link to the location of creating a new author -->
-        <p><a href="author_create.php">Make New Author</a></p>
+        <p class = "new"><a href="author_create.php">Make New Author</a></p>
         <!-- check the number of authors, if more than 0, display all, using the findAll function above that is in $authors-->
         <?php if (count($authors) > 0 ): ?>
             <table>
                 <thead>
                     <tr>
-                        <th class= "ti">First Name</th>
-                        <th class= "des">Last Name</th>
+                        <th class= "fn">First Name</th>
+                        <th class= "ln">Last Name</th>
                         <th class= "act">Actions</th>
                     </tr>
                 </thead>
@@ -35,8 +35,8 @@ $authors = Author::findAll();
                     <!-- a loop to push out each author with their info displayed  -->
                     <?php foreach($authors as $author): ?>
                         <tr>
-                            <td class = "te"><?= $author->first_name ?></td>
-                            <td class = "dn"><?= $author->last_name ?></td>
+                            <td class = "afn"><?= $author->first_name ?></td>
+                            <td class = "aln"><?= $author->last_name ?></td>
                             <td class = "an">
                                 <a href="author_edit.php?id=<?= $author->id?>">Edit</a>
                                 <form class="form-delete"action="author_delete.php" method="post">

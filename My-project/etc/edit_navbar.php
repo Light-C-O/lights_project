@@ -22,7 +22,7 @@ require_once 'config.php';
         list-style: none;
     }
     li a:hover{
-        color: #697033;
+        color: red;
     }
 
     /* Set the list image as background image*/
@@ -47,10 +47,10 @@ require_once 'config.php';
 <h3 class="cho">Choose what to change</h3>
 <ul class="edit_navbar">
     <li><a href="/intProj/lights_project/My-project/index.php">Home Page</a></li>
-    <li><a href="/intProj/lights_project/My-project/story/sstory_table.php">Story</a></li>
-    <li><a href="/intProj/lights_project/My-project/category/category_table.php">Category</a></li>
-    <li><a href="/intProj/lights_project/My-project/author/author_table.php">Author</a></li>
-    <li><a href="/intProj/lights_project/My-project/location/location_table.php">Location</a></li>
+    <li><a href="/intProj/lights_project/My-project/story/story_tab.php">Story</a></li>
+    <li><a href="/intProj/lights_project/My-project/category/category_tab.php">Category</a></li>
+    <li><a href="/intProj/lights_project/My-project/author/author_tab.php">Author</a></li>
+    <li><a href="/intProj/lights_project/My-project/location/location_tab.php">Location</a></li>
 </ul>
 
 <!-- 

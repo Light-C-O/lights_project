@@ -26,15 +26,15 @@ $stories = Story::findAll();
             <table>
                 <thead>
                     <tr>
-                        <th class= "hd">Headline</th>
-                        <th class= "shd">Short headline</th>
-                        <th class= "st">Status</th>
-                        <th class= "ar">Article</th>
-                        <th class= "im">Image</th>
-                        <th class= "imd">Image description</th>
-                        <th class= "au">Author</th>
-                        <th class= "ca">Category</th>
-                        <th class= "ln">Location</th>
+                        <th class= "thd">Headline</th>
+                        <th class= "thd">Short headline</th>
+                        <th class= "thd">Status</th>
+                        <th class= "thd">Article</th>
+                        <th class= "thd">Image</th>
+                        <th class= "thd">Image description</th>
+                        <th class= "thd">Author</th>
+                        <th class= "thd">Category</th>
+                        <th class= "thd">Location</th>
                         <th class= "act">Actions</th>
                     </tr>
                 </thead>
@@ -71,6 +71,7 @@ $stories = Story::findAll();
             <!-- if $storys is less than 0, meaning no stories, display the statement below -->
             <p>No stories found</p>
         <?php endif; ?>
+        <p class = "new"><a href="story_create.php">Make New Story</a></p>
         <?php require "../etc/edit_navbar.php";?>
     </body>
 </html>
