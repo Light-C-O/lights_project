@@ -29,8 +29,8 @@ try {
             "message" => "Story has been created",
             "type" =>"success" 
         ];
-        //then go back to the sstory_table page see it the new story
-        redirect("sstory_table.php");
+        //then go back to the story_tab page see it the new story
+        redirect("story_tab.php");
     }
     else {
         //if there is a problem, show the errors made and send a flash error message

@@ -28,8 +28,8 @@ try {
             "message" => "Location has been created",
             "type" =>"success" 
         ];
-        //then go back to the location_table page see it the new location
-        redirect("location_table.php");
+        //then go back to the location_tab page see it the new location
+        redirect("location_tab.php");
     }
     else {
         //if there is a problem, show the errors made and send a flash error message

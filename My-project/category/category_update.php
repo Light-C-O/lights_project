@@ -26,7 +26,7 @@ try{
         $category->name = $data["name"];
         //save the changes
         $category->save();
-    //if everything goes well, display a flash message and go back to the index.php (All Categories page) to see the changes
+    //if everything goes well, display a flash message and go back to the category_tab.php (All Categories page) to see the changes
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -35,7 +35,7 @@ try{
             "message" => "Category has been updated",
             "type" =>"success" 
         ];
-    redirect("category_table.php");
+    redirect("category_tab.php");
     }
     else {
         //if everything did not go well, it will go to the category_edit.php and user should settle the errors shown

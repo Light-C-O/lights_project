@@ -34,7 +34,7 @@ try{
         $story->location_id = $data["location_id"];
         //save the changes
         $story->save();
-    //if everything goes well, display a flash message and go back to the index.php (All Stories page) to see the changes
+    //if everything goes well, display a flash message and go back to the story_tab.php (All Stories page) to see the changes
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -43,7 +43,7 @@ try{
             "message" => "Story has been updated",
             "type" =>"success" 
         ];
-    redirect("sstory_table.php");
+    redirect("story_tab.php");
     }
     else {
         //if everything did not go well, it will go to the story_edit.php and user should settle the errors shown

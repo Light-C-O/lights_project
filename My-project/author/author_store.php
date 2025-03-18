@@ -29,7 +29,7 @@ try {
             "type" =>"success" 
         ];
         //then go back to the index page see it the new author
-        redirect("author_table.php");
+        redirect("author_tab.php");
     }
     else {
         //if there is a problem, show the errors made and send a flash error message

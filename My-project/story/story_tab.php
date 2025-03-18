@@ -20,7 +20,7 @@ $stories = Story::findAll();
         <?php require_once "../etc/edit_navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
         <!-- link to the location of creating a new story -->
-        <p><a href="story_create.php">Make New Story</a></p>
+        <p class = "new"><a href="story_create.php">Make New Story</a></p>
         <!-- check the number of stories, if more than 0, display all, using the findAll function above that is in $stories-->
         <?php if (count($stories) > 0 ): ?>
             <table>

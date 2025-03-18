@@ -30,8 +30,8 @@ try{
         "message" => "Location has been deleted",
         "type" =>"success" 
     ];
-    //redirect to the browser to location_table page to see the result
-    redirect("location_table.php");
+    //redirect to the browser to location_tab page to see the result
+    redirect("location_tab.php");
 }//exit once out of use
 catch (Exception $ex) {
     echo $ex->getMessage();

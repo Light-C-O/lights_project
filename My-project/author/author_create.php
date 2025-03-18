@@ -33,7 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>
             <!-- click on cancel to back to the All Authors page -->
-            <a href="author_table.php">Cancel</a>
+            <a href="author_tab.php">Cancel</a>
         </form>
     </body>
 </hmtl>

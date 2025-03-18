@@ -26,7 +26,7 @@ try{
         $location->name = $data["name"];
         //save the changes
         $location->save();
-    //if everything goes well, display a flash message and go back to the index.php (All Locations page) to see the changes
+    //if everything goes well, display a flash message and go back to the location_tab.php (All Locations page) to see the changes
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -35,7 +35,7 @@ try{
             "message" => "Location has been updated",
             "type" =>"success" 
         ];
-    redirect("location_table.php");
+    redirect("location_tab.php");
     }
     else {
         //if everything did not go well, it will go to the location_edit.php and user should settle the errors shown

@@ -28,8 +28,8 @@ try {
             "message" => "Category has been created",
             "type" =>"success" 
         ];
-        //then go back to the category_table page see it the new category
-        redirect("category_table.php");
+        //then go back to the category_tab page see it the new category
+        redirect("category_tab.php");
     }
     else {
         //if there is a problem, show the errors made and send a flash error message

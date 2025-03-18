@@ -30,8 +30,8 @@ try{
         "message" => "Category has been deleted",
         "type" =>"success" 
     ];
-    //redirect to the browser to category_table page to see the result
-    redirect("category_table.php");
+    //redirect to the browser to category_tab page to see the result
+    redirect("category_tab.php");
 }//exit once out of use
 catch (Exception $ex) {
     echo $ex->getMessage();
