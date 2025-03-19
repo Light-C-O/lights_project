@@ -33,7 +33,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit Another Section</a></p>
+    <p><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit Another Section</a></p>
     <?php require_once "../etc/flash_message.php";?>
         <h2>Edit the Story Form</h2>
         <!-- go to update when clicking the submit button -->

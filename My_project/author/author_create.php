@@ -14,7 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </head>
 
     <body>
-        <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit Another Section</a></p>
+        <p><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit Another Section</a></p>
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new author -->
         <h2>New Author Form</h2>

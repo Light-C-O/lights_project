@@ -33,7 +33,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <p><a href="/intProj/lights_project/My-project/etc/edit_navbar.php">Edit Another Section</a></p>
+    <p class = "edit"><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit Another Section</a></p>
         <h2>Edit the Author Form</h2>
         <!-- go to update when clicking the submit button -->
         <form action="author_update.php" method="POST">
