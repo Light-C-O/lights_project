@@ -5,7 +5,9 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-//pull out all the info from the Departement classs
+//pull out all the info from classs
+$id = $_GET["id"];
+$story = Story::findById($id);
 $authors = Author::findAll();
 $categories = Category::findAll();
 $locations = Location::findAll();

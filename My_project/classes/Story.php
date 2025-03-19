@@ -63,7 +63,7 @@ class Story {
                 "(headline, short_headline, status, article, img_url, img_description," . 
                 "author_id, category_id, location_id)" .
                 "VALUES " .
-                "(:headline, :article, :img_url, " . 
+                "(:headline, :short_headline, :status, :article, :img_url, :img_description," . 
                 ":author_id, :category_id, :location_id" . 
                 ")";
             }
