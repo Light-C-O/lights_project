@@ -52,7 +52,7 @@ $stories = Story::findAll();
                             <td class = "sho"><?= $story->short_headline ?></td>
                             <td class = "sat"><?= $story->status ?></td>
                             <td class = "art"><?= substr($story->article, 0, 50)?>...</td>
-                            <td class = "url"><img src="<?= $story->img_url ?>" width="100"></td>
+                            <td class = "url"><img src="<?= $import. $story->img_url ?>" width="100"></td>
                             <td class = "dep"><?= $story->img_description ?></td>
                             <td class = "aut"><?= $author->first_name ?> <?= $author->last_name ?></td>
                             <td class = "cat"><?= $category->name ?></td>

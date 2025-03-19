@@ -33,7 +33,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <p><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit Another Section</a></p>
+    <p class = "edit"><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
         <h2>Edit the Location Form</h2>
         <!-- go to update when clicking the submit button -->
         <form action="location_update.php" method="POST">

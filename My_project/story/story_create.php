@@ -19,7 +19,7 @@ $locations = Location::findAll();
     </head>
 
     <body>
-        <p><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit Another Section</a></p>
+        <p class = "edit"><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new story -->
         <h2>New Story Form</h2>
@@ -97,12 +97,12 @@ $locations = Location::findAll();
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
                 Creation date:
-                <input type="text" name="created_at" value="<?= old("created_at") ?>"><span class=" error"><?= error("created_at") ?><span>
+                <input type="datetime-local" name="created_at" placeholder="yyyy-mm-dd-hh-mm-ss" value="<?= old("created_at") ?>"><span class=" error"><?= error("created_at") ?><span>
             </p>
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
                 Update date:
-                <input type="text" name="updated_at" value="<?= old("updated_at") ?>"><span class=" error"><?= error("updated_at") ?><span>
+                <input type="datetime-local" name="updated_at" placeholder="yyyy-mm-dd-hh-mm-ss" value="<?= old("updated_at") ?>"><span class=" error"><?= error("updated_at") ?><span>
             </p>
 
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->

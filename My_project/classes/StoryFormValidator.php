@@ -34,32 +34,7 @@ class StoryFormValidator extends FormValidator {
         }
 
         //Image upload
-        // if (isset($_POST["submit"])) {
-
-        //     // Check image using getimagesize function and get size
-        //     // if a valid number is got then uploaded file is an image
-        //     if (isset($_FILES["img_url"])) {
-        //         // directory name to store the uploaded image files
-        //         // this should have sufficient read/write/execute permissions
-        //         // if not already exists, please create it in the root of the
-        //         // project folder
-        //         $targetDir = "images/";
-        //         $targetFile = $targetDir . basename($_FILES["img_url"]["name"]);
-        //         $uploadOk = 1;
-        //         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-                
-        //         // Validation here
-        //     }
-        // }
-
-        // // Check for uploaded file formats and allow only 
-        // // jpg, png, jpeg and gif
-        // // If you want to allow more formats, declare it here
-        // if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"
-        // ) {
-        //     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-        //     $uploadOk = 0;
-        // }
+        
 
         //Image description
         if(!$this->isPresent("img_description")) {

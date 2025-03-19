@@ -31,5 +31,5 @@ catch (Exception $e) {
     <?php foreach ($categories as $c) { ?>
         <li><a href="category.php?id=<?= $c->id ?>"><?= $c->name ?></a></li>
     <?php } ?>
-    <li><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit</a></li>
+    <li><a href="<?=$import?>etc/edit_navbar.php">Edit</a></li>
 </ul>

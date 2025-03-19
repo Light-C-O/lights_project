@@ -46,11 +46,11 @@ require_once 'config.php';
 <h1 class= "wel">Welcome to Edit Section</h1>
 <h3 class="cho">Choose what to change</h3>
 <ul class="edit_navbar">
-    <li><a href="/intProj/lights_project/My_project/index.php">Home Page</a></li>
-    <li><a href="/intProj/lights_project/My_project/story/story_tab.php">Story</a></li>
-    <li><a href="/intProj/lights_project/My_project/category/category_tab.php">Category</a></li>
-    <li><a href="/intProj/lights_project/My_project/author/author_tab.php">Author</a></li>
-    <li><a href="/intProj/lights_project/My_project/location/location_tab.php">Location</a></li>
+    <li><a href="<?=$import?>index.php">Home Page</a></li>
+    <li><a href="<?=$import?>story/story_tab.php">Story</a></li>
+    <li><a href="<?=$import?>category/category_tab.php">Category</a></li>
+    <li><a href="<?=$import?>author/author_tab.php">Author</a></li>
+    <li><a href="<?=$import?>location/location_tab.php">Location</a></li>
 </ul>
 
 <!-- 

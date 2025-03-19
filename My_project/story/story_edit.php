@@ -18,11 +18,17 @@ try{
     if($story === null) {
         throw new Exception("story not found");
     }
+
+    //pull the info from the other classes
+$authors = Author::findAll();
+$categories = Category::findAll();
+$locations = Location::findAll();
 }
 catch(Exception $ex) {
     echo $ex->getMessage();
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +39,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <p><a href="/intProj/lights_project/My_project/etc/edit_navbar.php">Edit Another Section</a></p>
+    <p class = "edit"><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
     <?php require_once "../etc/flash_message.php";?>
         <h2>Edit the Story Form</h2>
         <!-- go to update when clicking the submit button -->
@@ -53,8 +59,8 @@ catch(Exception $ex) {
 
             <p>
                 Status:
-                <input type="radio" name="status" value="0"<?= chosen("status", "0", $story->status) ? "checked" : "" ?>>Live
-                <input type="radio" name="status" value="1"<?= chosen("semester", "1", $story->status) ? "checked" : "" ?>>Not Live
+                <input type="radio" name="status" value="Live"<?= chosen("status", "Live", $story->status) ? "checked" : "" ?>>Live
+                <input type="radio" name="status" value="Not Live"<?= chosen("semester", "Not Live", $story->status) ? "checked" : "" ?>>Not Live
             </p>
 
             <p>
@@ -74,20 +80,21 @@ catch(Exception $ex) {
                 Author:
                 <select name="author_id">
                     <option value="">Please choose author...</option>"
-                    <?php foreach($authors as $author): ?>
-                        <option value="<?= $author->id ?>"  <?= chosen("author_id", $author->id) ? "selected" : "" ?>><?= $author->first_name, $author->last_name ?></option>
-                    <?php endforeach?>
+                    <?php
+                    foreach($authors as $author){ ?>
+                        <option value="<?= $author->id ?>"  <?= $story->author_id === $author->id ? "selected" : " " ?>><?= $author->first_name," ", $author->last_name ?></option>
+                    <?php } ?>
                 </select>
                 <span class="error"><?= error("author_id") ?></span>
             </p>
             
             <p>
                 Category:
-                <select name="category">
+                <select name="category_id">
                     <option value="">Please choose category...</option>"
                     <?php foreach($categories as $category): ?>
                     <!-- make an option to shows each new departemnt title -->
-                    <option value="<?= $category->id ?>"  <?= chosen("category_id", $category->id) ? "selected" : "" ?>><?= $category->name ?></option>
+                    <option value="<?= $category->id ?>"  <?= $story->category_id === $category->id ? "selected" : "" ?>><?= $category->name ?></option>
                     <?php endforeach?>
                 </select>
                 <span class="error"><?= error("category_id") ?></span>
@@ -102,6 +109,16 @@ catch(Exception $ex) {
                     <?php endforeach?>
                 </select>
                 <span class="error"><?= error("location_id") ?></span>
+            </p>
+            <p>
+                <!-- Input img_url for the story, place an error if the requirement was not met-->
+                Creation date:
+                <input type="datetime-local" name="created_at" placeholder="yyyy-mm-dd-hh-mm-ss" value="<?= old("created_at", $story->created_at) ?>"><span class=" error"><?= error("created_at") ?><span>
+            </p>
+            <p>
+                <!-- Input img_url for the story, place an error if the requirement was not met-->
+                Update date:
+                <input type="datetime-local" name="updated_at" placeholder="yyyy-mm-dd-hh-mm-ss" value="<?= old("updated_at", $story->updated_at) ?>"><span class=" error"><?= error("updated_at") ?><span>
             </p>
             <!-- once clicked, it will go to the story_update.php -->
             <button type="submit">Update</button>
