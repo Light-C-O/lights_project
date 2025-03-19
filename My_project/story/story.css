@@ -84,14 +84,10 @@ th, .act{
     background-color:  #66FFFF;
 }
 /* td */
-.hed, .art, .url, .dep{
+.hed, .art, .url, .dep, .sho{
     background-color: #f1fbff;
 }
 
-.sho{
-    background-color: #f1fbff;
-    text-align: center;
-}
 .sat, .aut, .cat, .loc{
     background-color: #f1fbff;
     text-align: center;

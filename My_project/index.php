@@ -12,7 +12,7 @@ try {
     // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
 
     $sportId = 1;
-    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 1, 'offset' => 0));
+    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 3, 'offset' => 2));
 
     $cultureId = 2;
     $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 4, 'offset' => 0));

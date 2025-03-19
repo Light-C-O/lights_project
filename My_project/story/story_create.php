@@ -38,7 +38,7 @@ $locations = Location::findAll();
             <p>
                 Status:
                 <input type="radio" name="status" value="0"<?= chosen("status", "0") ? "checked" : "" ?>>Live
-                <input type="radio" name="status" value="1"<?= chosen("semester", "1") ? "checked" : "" ?>>Not Live
+                <input type="radio" name="status" value="1"<?= chosen("status", "1") ? "checked" : "" ?>>Not Live
             </p>
             <p>
                 <!-- Input article for the story, place an error if the requirement was not met-->
@@ -49,8 +49,6 @@ $locations = Location::findAll();
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
                 Image:
                 <input type="file" name="img_url" value="<?= old("img_url") ?>"><span class=" error"><?= error("img_url") ?><span>
-                <!-- id="img_url"  -->
-                <!-- <input type="text" name="img_url" value="<?= old("img_url") ?>"><span class=" error"><?= error("img_url") ?><span> -->
             </p>
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
