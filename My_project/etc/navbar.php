@@ -11,7 +11,7 @@ catch (Exception $e) {
 <style>
     .navbar{
         display: flex;
-        gap: 20px;
+        gap: 6%;
         justify-content: center;
     }
     li{
@@ -20,6 +20,10 @@ catch (Exception $e) {
         display: flex;
         align-items: center;
         list-style: none;
+    }
+    li a:hover{
+        color: blue;
+        text-decoration: underline;
     }
 </style>
 <ul class="navbar">

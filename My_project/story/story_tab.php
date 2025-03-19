@@ -44,13 +44,15 @@ $stories = Story::findAll();
                         $author = Author::findById($story->author_id);
                         $category = Category::findById($story->category_id);
                         $location = Location::findById($story->location_id);
+                        // $result = $_GET["img_url"]
+                        // $img_url= $_GET["img_url"];
                         ?>
                         <tr class="obj">
                             <td class = "hed"><?= $story->headline ?></td>
                             <td class = "sho"><?= $story->short_headline ?></td>
                             <td class = "sat"><?= $story->status ?></td>
                             <td class = "art"><?= substr($story->article, 0, 50)?>...</td>
-                            <td class = "url"><?= $story->img_url ?></td>
+                            <td class = "url"><img src="<?= $story->img_url ?>" width="100"></td>
                             <td class = "dep"><?= $story->img_description ?></td>
                             <td class = "aut"><?= $author->first_name ?> <?= $author->last_name ?></td>
                             <td class = "cat"><?= $category->name ?></td>

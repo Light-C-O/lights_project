@@ -47,11 +47,11 @@
     border-color: #FC0029;
     }
 
-/* Related to the index.php */
+/* Related to the location_tab.php */
     h1{
-        background-color: #FFFF99; 
+        background-color: #FFFF88; 
         text-align: center;
-        border: 2px solid #FFFF66;
+        border: 2px solid #FFFF00;
     }
     table {
         width: 100%;
@@ -72,17 +72,17 @@
     }
     /* thead */
     th, .nm{
-        background-color: #FFFF99;
+        background-color: #FFFF88;
     }
     th, .act{
-        background-color: #FFFF66;
+        background-color: #FFFF00;
     }
     /* td */
     .nme{
-        background-color: #f6f2cb;
+        background-color: #ffffc0;
     }
     .an{
-        background-color: #FFFFCC;
+        background-color: #FFFF95;
         text-align: center;
     }
     .form-delete {
