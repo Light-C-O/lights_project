@@ -301,7 +301,7 @@ h3{
 }
 .medium-land img{
     width: 100%;
-    height: 230px;
+    /* height: 230px; */
     object-fit: contain;
 }
 
