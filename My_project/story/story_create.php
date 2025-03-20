@@ -6,8 +6,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 //pull out all the info from classs
-$id = $_GET["id"];
-$story = Story::findById($id);
+// $id = $_GET["id"];
+// $story = Story::findById($id);
 $authors = Author::findAll();
 $categories = Category::findAll();
 $locations = Location::findAll();
@@ -39,18 +39,19 @@ $locations = Location::findAll();
 
             <p>
                 Status:
-                <input type="radio" name="status" value="0"<?= chosen("status", "0") ? "checked" : "" ?>>Live
-                <input type="radio" name="status" value="1"<?= chosen("status", "1") ? "checked" : "" ?>>Not Live
+                <input type="radio" name="status" value="0"<?= chosen("status", "Live") ? "checked" : "" ?>>Live
+                <input type="radio" name="status" value="1"<?= chosen("status", "Not Live") ? "checked" : "" ?>>Not Live
             </p>
             <p>
                 <!-- Input article for the story, place an error if the requirement was not met-->
                 Article:
-                <input type="text" name="article" value="<?= old("article") ?>"><span class=" error"><?= error("article") ?><span>
+                <input type="text" name="article" style="width:600px; height:200px;" value="<?= old("article") ?>"></input><span class=" error"><?= error("article") ?><span>
+                <!-- <input type="text" name="article" value="<?= old("article") ?>"><span class=" error"><?= error("article") ?><span> -->
             </p>
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
                 Image:
-                <input type="file" name="img_url" value="<?= old("img_url") ?>"><span class=" error"><?= error("img_url") ?><span>
+                <input type="text" name="img_url" placeholder= "e.g images/picture.jpg" value="<?= 'images/'.old("img_url") ?>"><span class=" error"><?= error("img_url") ?><span>
             </p>
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
@@ -84,7 +85,7 @@ $locations = Location::findAll();
                 <span class=" error"><?= error("category_id") ?><span>
             </p>
             <p>
-                <!-- Select the category for story, place an error if the requirement was not met-->
+                <!-- Select the location for story, place an error if the requirement was not met-->
                 Location:
                 <select name="location_id">
                     <option value="">Please choose location...</option>"
@@ -97,15 +98,16 @@ $locations = Location::findAll();
                 <span class=" error"><?= error("location_id") ?><span>
             </p>
             <p>
-                <!-- Input img_url for the story, place an error if the requirement was not met-->
+                <!-- Input created for the story, place an error if the requirement was not met-->
                 Creation date:
                 <input type="datetime-local" name="created_at" placeholder="yyyy-mm-dd-hh-mm-ss" value="<?= old("created_at") ?>"><span class=" error"><?= error("created_at") ?><span>
             </p>
             <p>
-                <!-- Input img_url for the story, place an error if the requirement was not met-->
+                <!-- Input created for the story, place an error if the requirement was not met-->
                 Update date:
                 <input type="datetime-local" name="updated_at" placeholder="yyyy-mm-dd-hh-mm-ss" value="<?= old("updated_at") ?>"><span class=" error"><?= error("updated_at") ?><span>
             </p>
+
 
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>

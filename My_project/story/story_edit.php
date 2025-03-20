@@ -65,7 +65,7 @@ catch(Exception $ex) {
 
             <p>
                 Article:
-                <input type="text" name="article" value="<?= old("article", $story->article) ?>"><span class="error"><?= error("article") ?></span>
+                <input type="text" name="article" style="width:600px; height:200px;" value="<?= old("article", $story->article) ?>"><span class="error"><?= error("article") ?></span>
             </p>
             <p>
                 Image:

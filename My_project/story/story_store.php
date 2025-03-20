@@ -15,7 +15,6 @@ try {
     //it is valid, meaning the information the user hs enter had reached the requirements, 
     if($valid) {
         $data = $validator->data();
-        // $data["img_url"]="images/{$_FILES["img_url"]["name"]}";
         //make the new story
         $story =  new Story($data);
         // save it 
@@ -35,6 +34,7 @@ try {
     else {
         //if there is a problem, show the errors made and send a flash error message
         $errors = $validator->errors();
+        // print_r ($errors);
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }

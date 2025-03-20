@@ -34,7 +34,9 @@ class StoryFormValidator extends FormValidator {
         }
 
         //Image upload
-        
+        if(!$this->isPresent("img_url", ("/^images\/$/") )) {
+            $this->errors["img_url"] = "Please state the image Format: [images/{image-name.type}]";
+        }
 
         //Image description
         if(!$this->isPresent("img_description")) {

@@ -35,6 +35,8 @@ $stories = Story::findAll();
                         <th class= "thd">Author</th>
                         <th class= "thd">Category</th>
                         <th class= "thd">Location</th>
+                        <th class= "thd">Creation</th>
+                        <th class= "thd">Updated</th>
                         <th class= "act">Actions</th>
                     </tr>
                 </thead>
@@ -44,19 +46,21 @@ $stories = Story::findAll();
                         $author = Author::findById($story->author_id);
                         $category = Category::findById($story->category_id);
                         $location = Location::findById($story->location_id);
-                        // $result = $_GET["img_url"]
-                        // $img_url= $_GET["img_url"];
                         ?>
                         <tr class="obj">
                             <td class = "hed"><?= $story->headline ?></td>
                             <td class = "sho"><?= $story->short_headline ?></td>
                             <td class = "sat"><?= $story->status ?></td>
                             <td class = "art"><?= substr($story->article, 0, 50)?>...</td>
-                            <td class = "url"><img src="<?= $import. $story->img_url ?>" width="100"></td>
+                            <td class = "url"><img src="<?= $import.$story->img_url ?>" width="100"> 
+                                <?php if ($story->img_url == null || $story->img_url == ""){
+                                    echo "No image";} ?></td>
                             <td class = "dep"><?= $story->img_description ?></td>
                             <td class = "aut"><?= $author->first_name ?> <?= $author->last_name ?></td>
                             <td class = "cat"><?= $category->name ?></td>
                             <td class = "loc"><?= $location->name ?></td>
+                            <td class = "crt"><?= $story->created_at ?></td>
+                            <td class = "upt"><?= $story->updated_at ?></td>
 
                             <td class = "an">
                                 <a href="story_edit.php?id=<?= $story->id?>">Edit</a>
