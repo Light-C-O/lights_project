@@ -3,10 +3,10 @@ require_once 'config.php';
 ?>
 <style>
     .wel{
-        justify-self: center;
+        text-align: center;
     }
     .cho{
-        justify-self: center;
+        text-align: center;
     }
     
     .edit_navbar{
@@ -52,9 +52,3 @@ require_once 'config.php';
     <li><a href="<?=$import?>author/author_tab.php">Author</a></li>
     <li><a href="<?=$import?>location/location_tab.php">Location</a></li>
 </ul>
-
-<!-- 
-    <li><a href="<?= $home?>/index.php">Home</a></li>
-    <li><a href="<?=$home?>/course/index.php">Courses</a></li>
-    <li><a href="<?=$home?>/department/index.php">Departments</a></li>
-    <li><a href="<?=$home?>/module/index.php">Modules</a></li> -->

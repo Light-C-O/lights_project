@@ -18,21 +18,21 @@
 }
 
     /* Set the list image as background image*/
-        li::before {
+        /*li::before {
             content: '';
             display: inline-block;
             margin-right: 10px;
 
             /* Height of the list image*/
-            height: 20px;
+            /* height: 20px; */
 
             /* Width of the list image*/
-            width: 20px;
+            /* width: 20px;
             background-image: url('../spiral.gif');
             background-size: contain;
             background-repeat: no-repeat;
-            background-position: center;
-        }
+            background-position: center; */
+        /*}
 
     /* style for flash_message */
         .alert {

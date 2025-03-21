@@ -44,8 +44,8 @@ $locations = Location::findAll();
             </p>
             <p>
                 <!-- Input article for the story, place an error if the requirement was not met-->
-                Article:
-                <input type="text" name="article" style="width:600px; height:200px;" value="<?= old("article") ?>"></input><span class=" error"><?= error("article") ?><span>
+                <label for="above">Article:</label><br>
+                <textarea rows= "4" cols="50" class = "overglow" type="text" name="article" id="above" placeholder="Write the article here..." value="<?= old("article") ?>"></textarea><span class=" error"><?= error("article") ?><span>
                 <!-- <input type="text" name="article" value="<?= old("article") ?>"><span class=" error"><?= error("article") ?><span> -->
             </p>
             <p>

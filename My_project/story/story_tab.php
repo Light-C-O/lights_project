@@ -50,10 +50,17 @@ $stories = Story::findAll();
                         <tr class="obj">
                             <td class = "hed"><?= $story->headline ?></td>
                             <td class = "sho"><?= $story->short_headline ?></td>
-                            <td class = "sat"><?= $story->status ?></td>
+                            <td class = "sat"><?= $story->status ?>
+                            <!-- <?php if ($story->status === 0){
+                                echo $story->status = "Live";
+                            } else{
+                                echo $story->status = "Not Live";
+                            }
+                            ?> -->
+                            </td>
                             <td class = "art"><?= substr($story->article, 0, 50)?>...</td>
                             <td class = "url"><img src="<?= $import.$story->img_url ?>" width="100"> 
-                                <?php if ($story->img_url == null || $story->img_url == ""){
+                                <?php if ($import.$story->img_url === null || $import.$story->img_url === ""){
                                     echo "No image";} ?></td>
                             <td class = "dep"><?= $story->img_description ?></td>
                             <td class = "aut"><?= $author->first_name ?> <?= $author->last_name ?></td>

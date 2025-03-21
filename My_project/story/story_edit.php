@@ -64,8 +64,8 @@ catch(Exception $ex) {
             </p>
 
             <p>
-                Article:
-                <input type="text" name="article" style="width:600px; height:200px;" value="<?= old("article", $story->article) ?>"><span class="error"><?= error("article") ?></span>
+                <label for="above">Article:</label><br>
+                <textarea rows= "4" cols="50" class = "overglow" type="text" name="article" id="above" placeholder="Write the article here..."  value="<?= old("article", $story->article) ?>"><?=$story->article?></textarea><span class="error"><?= error("article") ?></span>
             </p>
             <p>
                 Image:
