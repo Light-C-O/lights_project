@@ -20,40 +20,87 @@ catch (Exception $e) {
 ?>
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?
+            family=Noto+Sans+JP:wght@100..900&
+            family=Playfair+Display:ital,wght@0,400..900;1,400..900&
+            family=Roboto:ital,wght@0,100..900;1,100..900&
+            family=Sahitya:wght@400;700&display=swap"
+        rel="stylesheet"
+        />
+        <!-- end of fonts -->
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <title>Story</title>
-        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <?php require_once "./etc/navbar.php"; ?>
         <?php require_once "./etc/flash_message.php"; ?>
-        <div class = "seeStories">
-            <div class = "focusPoint">
+        <div class = "seeStories container">
+            <div class = "focusPoint width-9">
                 <h1><?= $s->headline ?></h1>
                 <p><img src="<?= $s->img_url ?>" /></p>
                 <div>
-                <p><?= $s->article ?></p>
+                <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
+                <p class = "author">By: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                <p class ="fullArticle"><?= $s->article ?></p>
                 </div>
 
-                <p>Author: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-                <p>Category: <?= Category::findById($s->category_id)->name ?></p>
-                <p>Location: <?= Location::findById($s->location_id)->name ?></p>
-                <p>Date created: <?= $s->created_at ?></p>
-                <p>Last modified: <?= $s->updated_at ?></p>
-            </div>
-            <div class = "related">
-                <h2>Related Stories</h2>
-                <?php foreach ($related_stories as $rs) { ?>
-                    <?php if ($rs->id == $s->id) { continue; } ?>
-                    <div>
-                        <h3><a href="view_story.php?id=<?= $rs->id ?>"><?= $rs->headline ?></a></h3>
-                        <p>Author: <?= Author::findById($rs->author_id)->first_name . " " . Author::findById($rs->author_id)->last_name ?></p>
-                        <!-- <p>Category: <?= Category::findById($rs->category_id)->name ?></p> -->
-                        <!-- <p>Location: <?= Location::findById($rs->location_id)->name ?></p> -->
-                        <!-- <p>Date created: <?= $rs->created_at ?></p> -->
-                        <p>Last modified: <?= $rs->updated_at ?></p>
+                <div class = "bottom_info">
+                    <div class = "viewCat_Loc">
+                    <p>Category: <?= Category::findById($s->category_id)->name ?></p>
+                    <p>Location: <?= Location::findById($s->location_id)->name ?></p>
                     </div>
-                <?php } ?>
+                    <div class = "view_Dates">
+                        <p>Date created: <?= $s->created_at ?></p>
+                        <p>Last modified: <?= $s->updated_at ?></p>
+                    </div>
+                </div>
             </div>
         </div>
+
+    
+        <div class = "related container-no-padding">
+            <div>
+                <h2>Related Stories</h2>
+                <div class = "r_stories width-6">
+                    <?php foreach ($related_stories as $rs) { ?>
+                        <?php if ($rs->id == $s->id) { continue; } ?>
+                        <a href="view_story.php?id=<?= $rs->id ?>">
+                        <div class="medium-port wdith-3">
+                            <div class="content">
+                                <?php
+                                    if ($s->status = 0){
+                                        echo(
+                                            "<button class='label'>
+                                                <span class='dot'></span>
+                                                <div class='live'>
+                                                    <p>Live</p>
+                                                </div>
+                                            </button>"
+                                        );
+                                    }
+                                ?>
+                                <img src="<?= $rs->img_url ?>">
+                                <p class="imageDescription"><i><?= $rs->img_description?></i></p>
+                                <h3 class="title"><?= $rs->short_headline ?></h3>
+                                <p>Author: <?= Author::findById($rs->author_id)->first_name . " " . Author::findById($rs->author_id)->last_name ?></p>
+                            </div>
+                        </div> 
+                        </a>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+          
     </body>
 </html>

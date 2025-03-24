@@ -330,21 +330,77 @@ h3{
 
 
 /* Related to category.php */
+.display{
+    grid-template-columns: none;
+}
 .cat{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 20px;
 }
 .catImg img{
     width: 100%;
     object-fit: contain;
-    height: 190px;
+    height: 200px;
 }
 .whole .first{
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
-.loc_head .catLocation{
+.loc_head .catHeadline{
     word-wrap: break-word;
+}
+.loc_head .catLocation{
+    font-size: large;
+    font-weight: 500;
+    color: #990F3D;
+}
+.cat .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cat .insider{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cat .dates{
+    display: flex;
+    gap: 20px;
+}
+
+/* Related to veiw_story.php */
+.seeStories{
+    display: flex;
+    flex-direction: column;
+}
+.focusPoint .author{
+    font-family: "Roboto", serif;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 15px;
+    border-top: 2px dotted grey;
+    border-bottom: 2px dotted grey;
+    margin-bottom: 5px;
+}
+.focusPoint .imageDescription{
+    font-size: larger;
+    margin-bottom: 5px;
+}
+p, .fullArticle {
+    line-height: 33px;
+    font-size: 20px;
+}
+.bottom_info{
+    border: 2px double lightskyblue;
+}
+.related .r_stories{
+    display: flex;
+    flex-direction: row;
+}
+.related .medium-port{
+    display: flex;
+    flex-direction: column;
 }

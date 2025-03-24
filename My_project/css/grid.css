@@ -9,6 +9,14 @@
     grid-row-gap: 1em;
     grid-row: auto;
 }
+.related .r_stories{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 2em;
+    grid-row-gap: 1em;
+    grid-row: auto;
+}
 
 .container-no-padding {
     width: 1200px;
