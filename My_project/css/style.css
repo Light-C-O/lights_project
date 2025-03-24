@@ -134,6 +134,7 @@ h3{
 }
 
 
+/* All main components */
 
 /*main */
 .main{
@@ -324,4 +325,26 @@ h3{
 }
 .only-title img{
     display: none;
+}
+
+
+
+/* Related to category.php */
+.cat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.catImg img{
+    width: 100%;
+    object-fit: cover;
+    height: 190px;
+}
+.whole .first{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.loc_head .catLocation{
+    word-wrap: break-word;
 }

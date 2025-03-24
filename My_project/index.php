@@ -112,7 +112,7 @@ catch (Exception $e) {
                     } ?>
                         <div class="content">
                             <?php
-                                if ($s->status = "Live"){
+                                if ($s->status = 0){
                                     echo(
                                         "<button class='label'>
                                             <span class='dot'></span>
