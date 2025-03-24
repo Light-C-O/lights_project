@@ -337,7 +337,7 @@ h3{
 }
 .catImg img{
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
     height: 190px;
 }
 .whole .first{

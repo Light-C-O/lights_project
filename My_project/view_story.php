@@ -21,6 +21,7 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Story</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <?php require_once "./etc/navbar.php"; ?>
