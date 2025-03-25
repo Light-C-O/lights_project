@@ -341,12 +341,17 @@ h3{
 .catImg img{
     width: 100%;
     object-fit: contain;
-    height: 200px;
+    height: 60%;
+}
+.whole{
+    display: flex;
 }
 .whole .first{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    position: relative;
+}
+.whole .first .label{
+    position: absolute;
+    left: 20%;
 }
 .loc_head .catHeadline{
     word-wrap: break-word;
@@ -359,7 +364,6 @@ h3{
 .cat .info{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 .cat .insider{
     display: flex;
@@ -370,11 +374,22 @@ h3{
     display: flex;
     gap: 20px;
 }
+.cat .info .art p{
+    margin-bottom: 0px;
+}
 
 /* Related to veiw_story.php */
-.seeStories{
+.seeStory{
     display: flex;
     flex-direction: column;
+}
+.focusPoint h1{
+    text-align: center;
+}
+.focusPoint img{
+    width: 100%;
+    object-fit: contain;
+    align-items: center;
 }
 .focusPoint .author{
     font-family: "Roboto", serif;
@@ -395,12 +410,26 @@ p, .fullArticle {
 }
 .bottom_info{
     border: 2px double lightskyblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .related .r_stories{
     display: flex;
     flex-direction: row;
 }
+.related h2{
+    margin-bottom: 8px;
+}
 .related .medium-port{
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.related .medium-port img{
+    object-fit: contain;
+    height: 180px;
+}
+.r_stories .medium-port .label{
+    position: absolute;
 }

@@ -45,8 +45,8 @@ catch (Exception $e) {
     <body>
         <?php require_once "./etc/navbar.php"; ?>
         <?php require_once "./etc/flash_message.php"; ?>
-        <div class = "seeStories container">
-            <div class = "focusPoint width-9">
+        <div class = "seeStory container">
+            <div class = "focusPoint width-12">
                 <h1><?= $s->headline ?></h1>
                 <p><img src="<?= $s->img_url ?>" /></p>
                 <div>
@@ -61,8 +61,14 @@ catch (Exception $e) {
                     <p>Location: <?= Location::findById($s->location_id)->name ?></p>
                     </div>
                     <div class = "view_Dates">
-                        <p>Date created: <?= $s->created_at ?></p>
-                        <p>Last modified: <?= $s->updated_at ?></p>
+                        <p>Created: <?php
+                                $date = new DateTimeImmutable($s->created_at );
+                                echo $date->format('Y-m-d H:i');
+                                ?></p>
+                        <p>Modified: <?php
+                                $date = new DateTimeImmutable($s->updated_at );
+                                echo $date->format('Y-m-d H:i');
+                                ?></p>
                     </div>
                 </div>
             </div>
@@ -70,16 +76,16 @@ catch (Exception $e) {
 
     
         <div class = "related container-no-padding">
-            <div>
+            <div class = "width-6">
                 <h2>Related Stories</h2>
-                <div class = "r_stories width-6">
+                <div class = "r_stories">
                     <?php foreach ($related_stories as $rs) { ?>
                         <?php if ($rs->id == $s->id) { continue; } ?>
                         <a href="view_story.php?id=<?= $rs->id ?>">
-                        <div class="medium-port wdith-3">
+                        <div class="medium-port width-3">
                             <div class="content">
                                 <?php
-                                    if ($s->status = 0){
+                                    if ($s->status === 0){
                                         echo(
                                             "<button class='label'>
                                                 <span class='dot'></span>
