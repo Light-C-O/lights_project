@@ -227,36 +227,6 @@ h3{
     object-fit: cover;
 }
 
-
-/* 
-.section2 > :nth-child(n+2) img {
-    display: none;
-
-}
-
-.section2 > :nth-child(n+2) h3 {
-    font-size: 12px;
-    line-height: 14px;
-
-}
-
-.section2 > :nth-child(n+2) p.imageDescription {
-    display: none;
-
-}
-
-.section2 > :nth-child(n+2) p.date {
-    display: none;
-
-} */
-
-
-/* .mini-port img {
-    display: none;
-} */
-
-
-
 /* medium-land */
 .medium-land{
     display: flex;
@@ -326,6 +296,50 @@ h3{
 .only-title img{
     display: none;
 }
+
+/* 
+.section2 > :nth-child(n+2) img {
+    display: none;
+
+}
+
+.section2 > :nth-child(n+2) h3 {
+    font-size: 12px;
+    line-height: 14px;
+
+}
+
+.section2 > :nth-child(n+2) p.imageDescription {
+    display: none;
+
+}
+
+.section2 > :nth-child(n+2) p.date {
+    display: none;
+
+} */
+
+.section2 .mini-port{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3px;
+    border-bottom: 1px solid #ABABAB;
+    height: 33%;
+}
+.section2 .mini-port img {
+    display: none;
+}
+.section2 .mini-port .imageDescription {
+    display: none;
+}
+.section2 .mini-port .art {
+    display: none;
+}
+
+
+
+
 
 
 

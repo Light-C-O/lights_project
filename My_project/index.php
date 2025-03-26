@@ -103,10 +103,10 @@ catch (Exception $e) {
                 <?php foreach ($cultureStories as $index => $s) { ?>
 
                     <?php  
-                        if($index == 0 ){ 
+                        if($index === 0 ){ 
                             echo "<div class='medium-port'>" ;
                         } else { 
-                            echo "<div class='only-title'>" ;
+                            echo "<div class='mini-port'>" ;
                         
                         
                     } ?>
@@ -137,11 +137,12 @@ catch (Exception $e) {
                             <h3 class="title">
                                 <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
                             </h3>
-                            <p>
-                                <?= substr($s->article, 0, 100)?>...
-                            </p>
+                            <div class = "art"><?= substr($s->article, 0, 100)?>...</div>
                         </div>
-                        <p class="date"><?= $s->updated_at ?></p>
+                        <p class="date">Modified: <?php
+                            $date = new DateTimeImmutable($s->updated_at );
+                            echo $date->format('Y-m-d');
+                            ?></p>
                     </div>
                 <?php }?>
     
