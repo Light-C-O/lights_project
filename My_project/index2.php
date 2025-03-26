@@ -15,7 +15,7 @@ try {
     $sportStories = Story::findByCategory($sportId, $options = array('limit' => 1, 'offset' => 1));
 
     $cultureId = 2;
-    $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 4, 'offset' => 0));
+    $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 1, 'offset' => 0));
 
     $politicsId = 3;
     $politicsStories = Story::findByCategory($politicsId, $options = array('limit' => 3, 'offset' => 0));
@@ -102,11 +102,11 @@ catch (Exception $e) {
                     <?php  
                         if($index === 0 ){ 
                             echo "<div class='medium-port'>" ;
-                        } else { 
-                            echo "<div class='mini-port'>" ;
-                        
-                        
-                    } ?>
+                        } 
+                        // else { 
+                        //     echo "<div class='mini-port'>" ;
+                        // } 
+                    ?>
                         <div class="content">
                             <?php
                                 if ($s->status === 0){
