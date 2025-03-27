@@ -123,9 +123,7 @@ h3{
     gap: 20px;
     border-bottom: 1px solid #ABABAB;
 }
-.section4 .medium-port{
-    flex: 50%;
-}
+
 
 
 /* All main components */
@@ -206,9 +204,18 @@ h3{
     top:-10px;
     left:-5px;
 }
+.medium-port .imageDescription{
+    font-size: 12px;
+}
 
-.medium-port .second{
+/* .medium-port .second{
     margin-bottom: 5px;
+} */
+.medium-port .art p{
+    font-family: "Roboto";
+    font-size: 12px;
+    line-height: 19px;
+    margin-bottom: 12px;
 }
 .medium-port .category{
     text-align: start;
@@ -231,42 +238,41 @@ h3{
     align-items: center;
 }
 .medium-land .content{
-    flex:54%;
+    flex: 1;
     position: relative;
 }
 .medium-land .label{
-    position: absolute;
+    right: 0px;
 
 }
 .medium-land .context{
+    flex: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 5px;
 }
 .medium-land .text{
-    gap: 10px;
     display: flex;
     flex-direction: column;
 }
-.medium-land .first{
+/* .medium-land .first{
     border-bottom:1px solid grey;
-}
+} */
 .medium-land .first h3{
     font-size: 20px;
     line-height: 18px;
 }
 .medium-land .category{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
-.medium-land .second h3{
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 16px;
+.medium-land .second p{
+    font-family: "Roboto";
+    font-size: 12px;
+    line-height: 19px;
+    margin-bottom: 12px;
 }
 .medium-land img{
     width: 100%;
-    /* height: 230px; */
     object-fit: contain;
 }
 
@@ -285,10 +291,6 @@ h3{
 }
 .only-title .category{
     font-size: 10px;
-    margin-bottom: 1px;
-}
-.only-title img{
-    display: none;
 }
 
 /* 
@@ -349,6 +351,28 @@ h3{
 }
 
 
+.section4 .medium-port{
+    flex-direction: column;
+}
+.section4 .medium-port img{
+    height: fit-content;
+}
+.section4 .medium-port .imageDescription{
+    font-size: 15px;
+}
+.section4 .medium-land .content{
+    flex: 1;
+}
+.section4 .medium-land .img{
+    height: 157px;
+    object-fit: cover;
+}
+.section4 .medium-land .context{
+    flex: 1;
+}
+.medium-port .art p{
+    font-size: 15px;
+}
 
 
 

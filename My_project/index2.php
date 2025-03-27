@@ -11,21 +11,6 @@ try {
     // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3));
     // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
 
-    $sportId = 1;
-    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 1, 'offset' => 1));
-
-    $cultureId = 2;
-    $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 1, 'offset' => 0));
-
-    $politicsId = 3;
-    $politicsStories = Story::findByCategory($politicsId, $options = array('limit' => 3, 'offset' => 0));
-
-    $obituaryId = 4;
-    $obituaryStories = Story::findByCategory($obituaryId, $options = array('limit' => 2, 'offset' => 0 ));
-
-    $crimeId = 5;
-    $crimeStories = Story::findByCategory($crimeId, $options = array('limit' => 1, 'offset' => 0 ));
-
     // $stories = Story::findByCategory($categoryId);
     // $stories = Story::findByCategory($categoryId, $options = array('limit' => 3));
 
@@ -35,6 +20,41 @@ try {
     // $stories = Story::findByLocation($locationId);
     // $stories = Story::findByLocation($locationId, $options = array('limit' => 3));
     $stories = Story::findByLocation($locationId, $options = array('limit' => 2, 'offset' => 1 ));
+
+
+//categories
+    $sportId = 1;
+    $sportStories = Story::findByCategory($sportId, $options = array('limit' => 2, 'offset' => 0));
+    //array position
+    $sportStory1 = $sportStories[0];
+    $sportStory2 = $sportStories[1];
+    
+    $cultureId = 2;
+    $cultureStories = Story::findByCategory($cultureId, $options = array('limit' => 3, 'offset' => 0));
+    //array position
+    $cultureStory1 = $cultureStories[0];
+    $cultureStory2 = $cultureStories[1];
+    $cultureStory3 = $cultureStories[2];
+
+    $politicsId = 3;
+    $politicsStories = Story::findByCategory($politicsId, $options = array('limit' => 3, 'offset' => 0));
+
+    $politicsStory1 = $politicsStories[0];
+    $politicsStory2 = $politicsStories[1];
+    $politicsStory3 = $politicsStories[2];
+
+    $obituaryId = 4;
+    $obituaryStories = Story::findByCategory($obituaryId, $options = array('limit' => 2, 'offset' => 0 ));
+    //array position
+    $obituaryStory1 = $obituaryStories[0];
+    $obituaryStory2 = $obituaryStories[1];
+
+    $crimeId = 5;
+    $crimeStories = Story::findByCategory($crimeId, $options = array('limit' => 1, 'offset' => 0 ));
+    //array position
+    $crimeStory1 = $crimeStories[0];
+
+
 }
 catch (Exception $e) {
     echo $e->getMessage();
@@ -72,76 +92,57 @@ catch (Exception $e) {
         <?php require_once "./etc/flash_message.php"; ?>
 
         <div class ="topTier container">
-            
-            <div class="section1 width-9">
-                <?php foreach ($sportStories as $s) { ?>
+            <!--Big Top Sport Story-->
+            <div class="section1 width-9">  
+                <a href="view_story.php?id=<?= $sportStory1->id ?>">
                     <div class="main">
-                        <img src="<?= $s->img_url ?>"/>
+                        <img src="<?= $sportStory1->img_url ?>"/>
                         <!--Strange, but fixed it-->
                         <div class="context">
                         <div class="header">
-                            <h3 class="title">
-                                <a href="view_story.php?id=<?= $s->id ?>"><?= $s->short_headline ?></a>
-                            </h3>
+                            <h3 class="title"><?= $sportStory1->short_headline ?></h3>
                         </div>
-                        <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
+                        <h5 class="category"><?= Category::findById($sportStory1->category_id)->name ?></h5>
                         </div>
 
                         <div class="imageDescription">
-                            <h4><i>Image: <?= $s->img_description?></i></h4>
+                            <h4><i>Image: <?= $sportStory1->img_description?></i></h4>
                         </div>
                     </div>
-                <?php }?>
+                </a>
             </div>
             
             
                 <!-- Done -->
             
             <div class="section2 width-3">
-                <?php foreach ($cultureStories as $index => $s) { ?>
-                    <?php  
-                        if($index === 0 ){ 
-                            echo "<div class='medium-port'>" ;
-                        } 
-                        // else { 
-                        //     echo "<div class='mini-port'>" ;
-                        // } 
-                    ?>
-                        <div class="content">
-                            <?php
-                                if ($s->status === 0){
-                                    echo(
-                                        "<button class='label'>
-                                            <span class='dot'></span>
-                                            <div class='live'>
-                                                <p>Live</p>
-                                            </div>
-                                        </button>"
-                                    );
-                                }
-                            ?>
-                     
-                        <!-- <?php  
-                        if($index >= 1 ){ 
-                           echo "<h4 class='title'>
-                           <a href='view_story.php?id=<?= $s->id ?>'><?= $s->headline ?></a>
-                            </h4>" ;
-                        }  ?> -->
-
-                            <img src="<?= $s->img_url?>" />
-                            <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
-                            <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                            <h3 class="title">
-                                <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                            </h3>
-                            <div class = "art"><?= substr($s->article, 0, 100)?>...</div>
+                    <a href="view_story.php?id=<?= $cultureStory1->id ?>">
+                        <div class="medium-port">
+                            <div class="content">
+                                <?php
+                                    if ($cultureStory1->status === 0){
+                                        echo(
+                                            "<button class='label'>
+                                                <span class='dot'></span>
+                                                <div class='live'>
+                                                    <p>Live</p>
+                                                </div>
+                                            </button>"
+                                        );
+                                    }
+                                ?>
+                                <img src="<?= $cultureStory1->img_url?>" />
+                                <p class="imageDescription"><i>Image: <?= $cultureStory1->img_description?></i></p>
+                                <h5 class="category"><?= Category::findById($cultureStory1->category_id)->name ?></h5>
+                                <h3 class="title"><?= $cultureStory1->headline ?></h3>
+                                <div class = "art"><?= substr($cultureStory1->article, 0, 100)?>...</div>
+                            </div>
+                            <p class="date">Modified: <?php
+                                $date = new DateTimeImmutable($cultureStory1->updated_at );
+                                echo $date->format('Y-m-d');
+                                ?></p>
                         </div>
-                        <p class="date">Modified: <?php
-                            $date = new DateTimeImmutable($s->updated_at );
-                            echo $date->format('Y-m-d');
-                            ?></p>
-                    </div>
-                <?php }?>
+                    </a>
     
                 <div class="bottom">
                     <?php foreach ($obituaryStories as $s) { ?> 
@@ -153,10 +154,12 @@ catch (Exception $e) {
                 </div>
             </div>
         </div>
-        
+        <!-- Second Row-->
+
         <div class="secTier container-no-padding">
             <div class="section3 width-6">
                 <?php foreach ($politicsStories as $s) { ?>
+                    <a href="view_story.php?id=<?= $s->id ?>">
                     <div class="medium-land">
                         <div class="content">
                             <div class="image">
@@ -178,13 +181,11 @@ catch (Exception $e) {
                         <div class="context">
                             <div class="text">
                             <div class="first">
-                                <h3>
-                                    <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                                </h3>
+                                <h3><?= $s->headline ?></h3>
                                 <p class="category"><?= Category::findById($s->category_id)->name ?></p>
                             </div>
                             <div class="second">
-                                <h3><a href="view_story.php?id=<?= $s->id ?>"><?= $s->short_headline ?></a></h3>
+                                <?= substr($s->article, 0, 100) ?>...
                             </div>
                             </div>
                             <div class="author_time">
@@ -193,16 +194,18 @@ catch (Exception $e) {
                             </div>
                         </div>
                     </div>
+                    </a>
                 <?php } ?>
             </div>
 
             <div class="section4 width-6">
                 <div class="top">
-                    <?php foreach ($sportStories as $s) { ?>
+                    <!-- Small sport story 2-->               
+                    <a href="view_story.php?id=<?= $sportStory2->id ?>">
                         <div class="medium-port">
                             <div class="content">
                                 <?php
-                                    if ($s->status === 0){
+                                    if ($sportStory2->status === 0){
                                         echo(
                                             "<button class='label'>
                                                 <span class='dot'></span>
@@ -213,22 +216,22 @@ catch (Exception $e) {
                                         );
                                     }
                                 ?>
-                                <img src="<?= $s->img_url?>" />
-                                <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
-                                <h5 class="category"><?= Category::findById($s->category_id)->name ?></h5>
-                                <h3 class="title">
-                                    <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                                </h3>
-                                <p>
-                                    <?= substr($s->article, 0, 100)?>...
-                                </p>
+                                <img src="<?= $sportStory2->img_url?>" />
+                                <p class="imageDescription"><i>Image: <?= $sportStory2->img_description?></i></p>
+                                <h5 class="category"><?= Category::findById($sportStory2->category_id)->name ?></h5>
+                                <h3 class="title"><?= $sportStory2->headline?></h3>
+                                <div class = "art">
+                                    <?= substr($sportStory2->article, 0, 190)?>...
+                                </div>
                             </div>
-                            <p class="date"><?= $s->updated_at ?></p>
+                            <p class="date"><?= $sportStory2->updated_at ?></p>
                         </div>
-                    <?php } ?>
+                    </a>
+                    
                 </div>
 
-                <?php foreach ($obituaryStories as $s) { ?>
+                <?php foreach ($crimeStories as $s) { ?>
+                    <a href="view_story.php?id=<?= $s->id ?>">
                     <div class="medium-land">
                         <div class="content">
                             <div class="image">
@@ -250,13 +253,11 @@ catch (Exception $e) {
                         <div class="context">
                             <div class="text">
                             <div class="first">
-                                <h3>
-                                    <a href="view_story.php?id=<?= $s->id ?>"><?= $s->headline ?></a>
-                                </h3>
+                                <h3><?= $s->short_headline ?></h3>
                                 <p class="category"><?= Category::findById($s->category_id)->name ?></p>
                             </div>
                             <div class="second">
-                                <h3><a href="view_story.php?id=<?= $s->id ?>"><?= $s->short_headline ?></a></h3>
+                                <?= substr($s->article, 0, 100) ?>...
                             </div>
                             </div>
                             <div class="author_time">
@@ -265,6 +266,7 @@ catch (Exception $e) {
                             </div>
                         </div>
                     </div>
+                    </a>
                 <?php } ?>
             </div>
         </div>
