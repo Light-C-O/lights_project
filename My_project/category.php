@@ -28,14 +28,11 @@ catch (Exception $e) {
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-        href="https://fonts.googleapis.com/css2?
-            family=Noto+Sans+JP:wght@100..900&
-            family=Playfair+Display:ital,wght@0,400..900;1,400..900&
-            family=Roboto:ital,wght@0,100..900;1,100..900&
-            family=Sahitya:wght@400;700&display=swap"
-        rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?
+        family=Noto+Sans+JP:wght@100..900&
+        family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&
+        family=Sahitya:wght@400;700&display=swap"
+        rel="stylesheet"/>
         <!-- end of fonts -->
         <link rel="stylesheet" href="css/all.min.css" />
         <link rel="stylesheet" href="css/reset.css" />
