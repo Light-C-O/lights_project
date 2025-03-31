@@ -49,10 +49,10 @@ catch (Exception $e) {
             <div class = "display container">
                 <h1>Stories: <?= $category->name ?></h1>
             </div>
-            <div class = "cat container-no-padding">
+            <div class = "cat container-no-padding width-12">
                 <?php foreach ($stories as $s) { ?>
                     <a href="view_story.php?id=<?= $s->id ?>">
-                        <div class = "whole width-9">  
+                        <div class = "whole">  
                             <div class = "first">
                                 <?php
                                     if ($s->status === 0){
@@ -74,7 +74,7 @@ catch (Exception $e) {
                                     <h2 class = "catHeadline"><?= $s->short_headline ?></h2>
                                 </div>
                                 <div class = "art">
-                                <?=substr($s->article , 0, 150)?>...
+                                    <?=substr($s->article , 0, 150)?>...
                                 </div>
                                 <div class = "insider">
                                     <p class = "catAuthor">Author: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>

@@ -406,6 +406,7 @@ h3{
     height: 196px;
 }
 .whole{
+    flex-direction: row;
     display: flex;
     border: 1px solid black;
     gap: 20px;
