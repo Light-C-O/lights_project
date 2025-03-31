@@ -44,9 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event){
             switch(i){
                 case 0: text = data.first_name; break;
                 case 1: text = data.last_name; break;
-                // case 2: text = data.code; break;
-                // case 3: text = data.department_id; break;
-                // case 4: text = data.module_id; break;
             }
             cell.innerHTML = text;
         }
