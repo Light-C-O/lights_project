@@ -120,7 +120,6 @@ catch (Exception $e) {
             
             
                 <!-- Done -->
-            
             <div class="section2 width-3">
                 <a href="view_story.php?id=<?= $cultureStory1->id ?>">
                     <div class="medium-port">
@@ -169,40 +168,40 @@ catch (Exception $e) {
             <div class="section3 width-6">
                 <?php foreach ($politicsStories as $s) { ?>
                     <a href="view_story.php?id=<?= $s->id ?>">
-                    <div class="medium-land">
-                        <div class="content">
-                            <div class="image">
-                                <?php
-                                    if ($s->status === 0){
-                                        echo(
-                                            "<button class='label'>
-                                                <span class='dot'></span>
-                                                <div class='live'>
-                                                    <p>Live</p>
-                                                </div>
-                                            </button>"
-                                        );
-                                    }
-                                ?>
-                            <img src="<?= $s->img_url ?>" />
+                        <div class="medium-land">
+                            <div class="content">
+                                <div class="image">
+                                    <?php
+                                        if ($s->status === 0){
+                                            echo(
+                                                "<button class='label'>
+                                                    <span class='dot'></span>
+                                                    <div class='live'>
+                                                        <p>Live</p>
+                                                    </div>
+                                                </button>"
+                                            );
+                                        }
+                                    ?>
+                                <img src="<?= $s->img_url ?>" />
+                                </div>
+                            </div>
+                            <div class="context">
+                                <div class="text">
+                                <div class="first">
+                                    <h3><?= $s->headline ?></h3>
+                                    <p class="category"><?= Category::findById($s->category_id)->name ?></p>
+                                </div>
+                                <div class="second">
+                                    <?= substr($s->article, 0, 100) ?>...
+                                </div>
+                                </div>
+                                <div class="author_time">
+                                <p class="author"><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                                <p class="time">5 mins</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="context">
-                            <div class="text">
-                            <div class="first">
-                                <h3><?= $s->headline ?></h3>
-                                <p class="category"><?= Category::findById($s->category_id)->name ?></p>
-                            </div>
-                            <div class="second">
-                                <?= substr($s->article, 0, 100) ?>...
-                            </div>
-                            </div>
-                            <div class="author_time">
-                            <p class="author"><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-                            <p class="time">5 mins</p>
-                            </div>
-                        </div>
-                    </div>
                     </a>
                 <?php } ?>
             </div>

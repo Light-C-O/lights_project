@@ -73,7 +73,7 @@ catch (Exception $e) {
 
     
         <div class = "related container-no-padding">
-            <div class = "width-6">
+            <div class = "width-12">
                 <h2>Related Stories</h2>
                 <div class = "r_stories">
                     <?php foreach ($related_stories as $rs) { ?>
@@ -96,7 +96,7 @@ catch (Exception $e) {
                                 <img src="<?= $rs->img_url ?>">
                                 <p class="imageDescription"><i><?= $rs->img_description?></i></p>
                                 <h3 class="title"><?= $rs->short_headline ?></h3>
-                                <p>Author: <?= Author::findById($rs->author_id)->first_name . " " . Author::findById($rs->author_id)->last_name ?></p>
+                                <p class = "author">Author: <?= Author::findById($rs->author_id)->first_name . " " . Author::findById($rs->author_id)->last_name ?></p>
                             </div>
                         </div> 
                         </a>

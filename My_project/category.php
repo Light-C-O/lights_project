@@ -47,45 +47,45 @@ catch (Exception $e) {
         <?php require_once "./etc/flash_message.php"; ?>
 
             <div class = "display container">
-            <h1>Stories: <?= $category->name ?></h1>
+                <h1>Stories: <?= $category->name ?></h1>
             </div>
             <div class = "cat container-no-padding">
                 <?php foreach ($stories as $s) { ?>
-                <a href="view_story.php?id=<?= $s->id ?>">
-                <div class = "whole width-9">  
-                    <div class = "first">
-                        <?php
-                            if ($s->status === 0){
-                                echo(
-                                    "<button class='label'>
-                                        <span class='dot'></span>
-                                        <div class='live'>
-                                            <p>Live</p>
-                                        </div>
-                                    </button>"
-                                );
-                            }
-                        ?>
-                        <p class = "catImg"><img src="<?= $s->img_url ?>"></p>
-                    </div>
-                    <div class = "info">
-                        <div class ="loc_head">
-                            <p class = "catLocation"><?= Location::findById($s->location_id)->name ?></p>
-                            <h2 class = "catHeadline"><?= $s->headline ?></h2>
+                    <a href="view_story.php?id=<?= $s->id ?>">
+                        <div class = "whole width-9">  
+                            <div class = "first">
+                                <?php
+                                    if ($s->status === 0){
+                                        echo(
+                                            "<button class='label'>
+                                                <span class='dot'></span>
+                                                <div class='live'>
+                                                    <p>Live</p>
+                                                </div>
+                                            </button>"
+                                        );
+                                    }
+                                ?>
+                                <div class = "catImg"><img src="<?= $s->img_url ?>"></div>
+                            </div>
+                            <div class = "info">
+                                <div class ="loc_head">
+                                    <p class = "catLocation"><?= Location::findById($s->location_id)->name ?></p>
+                                    <h2 class = "catHeadline"><?= $s->short_headline ?></h2>
+                                </div>
+                                <div class = "art">
+                                <?=substr($s->article , 0, 150)?>...
+                                </div>
+                                <div class = "insider">
+                                    <p class = "catAuthor">Author: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                                    <p class = "catCreate">Date created: <?php
+                                    $date = new DateTimeImmutable($s->created_at );
+                                    echo $date->format('Y-m-d');
+                                    ?></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class = "art">
-                        <?=substr($s->article , 0, 100)?>...
-                        </div>
-                        <div class = "insider">
-                            <p class = "catAuthor">Author: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-                            <p class = "catCreate">Date created: <?php
-                            $date = new DateTimeImmutable($s->created_at );
-                            echo $date->format('Y-m-d');
-                            ?></p>
-                        </div>
-                    </div>
-                </div>
-                </a>
+                    </a>
                 <?php } ?>
             </div>
     </body>
