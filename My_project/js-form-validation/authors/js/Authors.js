@@ -1,10 +1,12 @@
 import AuthorFormValidator from "./classes/AuthorFormValidator.js";
+import AuthorDetails from "./components/AuthorDetails.js";
 
 document.addEventListener("DOMContentLoaded", function(event){
     let form = document.querySelector('#form-author');
     let table = document.querySelector('#table-authors');
     let tbody = table.querySelector("tbody");
     let btn = document.querySelector("#btn-submit");
+    let test = document.querySelector('#test');
 
     //Add an event listener for btn when it comes to click
     btn.addEventListener("click", async function(event){
@@ -35,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function(event){
         }
     });
 
+
+    test.addEventListener('click', function (event){
+        console.log(click);
+        let authorDetails = new AuthorDetails();
+        
+        authorDetails.innerHTML = "";
+        authorDetails.appendChild(authorDetails.render());
+    });
+
     function insertRow(data){
         let row = tbody.insertRow();
         for(let i=0; i != 2; i++){
@@ -49,4 +60,8 @@ document.addEventListener("DOMContentLoaded", function(event){
         }
 
     }
+
+    // function navPath{
+
+    // }
 });
