@@ -1,3 +1,9 @@
+<?php
+require_once "../../etc/config.php";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,8 +13,6 @@
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/grid.css">
         <link rel="stylesheet" href="./css/styles.css">
-        <link rel="import" href="/My_project/etc/edit_navbar.php">
-        <!-- <link rel="stylesheet" href="/My_project/author/author.css"> -->
 
 
         <title>Authors</title>
@@ -24,7 +28,7 @@
                     <thead>
                         <tr>
                             <th>First Name</th>
-                            <th>Last NAme</th>
+                            <th>Last Name</th>
                     </thead>
                     <tbody>
                         <tr>
@@ -65,7 +69,7 @@
                         <div class="error" id="error-last_name"></div>
                     </div>
                         <button type="submit" id="btn-submit">Submit</button>
-                        <button type="button"><a href="http://localhost/intProj/lights_project/My_project/etc/edit_navbar.php">Cancel</a></button>
+                        <button type="button"><a href="<?=$js?>edit_navbar.php">Cancel</a></button>
                     </div>
                 </form>
             </div>

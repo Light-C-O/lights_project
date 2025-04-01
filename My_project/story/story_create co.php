@@ -16,13 +16,8 @@ $locations = Location::findAll();
 <!DOCTYPE html>
 <html lang="eng">
     <head>
-    <link rel="stylesheet" href="story.css">
-        <!-- <style>
-            form div input[type="text"];
-            form div input[type="file"];
-        </style> -->
         <title>Create a Story Form</title>
-
+        <link rel="stylesheet" href="story.css">
     </head>
 
     <body>
@@ -30,7 +25,7 @@ $locations = Location::findAll();
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new story -->
         <h2>New Story Form</h2>
-        <form action="story_store.php" method="POST" enctype="multipart/form-data">
+        <form action="story_store.php" method="POST">
             <p>
                 <!-- Input headline for the story, place an error if the requirement was not met-->
                 Headline:
@@ -56,9 +51,7 @@ $locations = Location::findAll();
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
                 Image:
-                <label for="img_url">Image</label>
-                <input type="file" id="img_url" name="img_url" />
-                <span class="error"><?= error('img_url') ?></span>
+                <input type="text" name="img_url" placeholder= "e.g images/picture.jpg" value="<?= 'images/'.old("img_url") ?>"><span class=" error"><?= error("img_url") ?><span>
             </p>
             <p>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->

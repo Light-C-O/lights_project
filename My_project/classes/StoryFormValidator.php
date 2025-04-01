@@ -1,7 +1,7 @@
 <?php
 class StoryFormValidator extends FormValidator {
-    public function __construct ($data=[]) {
-        parent::__construct($data);
+    public function __construct ($data=[], $files=[]) {
+        parent::__construct($data, $files);
     }
 
     //The requirments to made
@@ -34,8 +34,19 @@ class StoryFormValidator extends FormValidator {
         }
 
         //Image upload
-        if(!$this->isPresent("img_url", ("/^images\/$/") )) {
-            $this->errors["img_url"] = "Please state the image Format: [images/{image-name.type}]";
+        // if(!$this->isPresent("img_url", ("/^images\/$/") )) {
+        //     $this->errors["img_url"] = "Please state the image Format: [images/{image-name.type}]";
+        // }
+        $maxFileSize = 1 * 1024 * 1024; // 1 MB
+        $allowedTypes = ['image/jpg', 'image/JPG', 'image/jpeg', 'image/png', 'image/gif'];
+        if (!$this->hasFile("img_url")) {
+            $this->errors["img_url"] = "Please choose an image";
+        }
+        else if (!$this->hasFileType("img_url", $allowedTypes)) {
+            $this->errors["img_url"] = "Please choose a valid image type [image.jpeg, image.png, image.gif]";
+        }
+        else if (!$this->hasFileSize("img_url", $maxFileSize)) {
+            $this->errors["img_url"] = "Please choose an image with a size less than 1 MB";
         }
 
         //Image description

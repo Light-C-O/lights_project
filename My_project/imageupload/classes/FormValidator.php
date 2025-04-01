@@ -149,10 +149,10 @@ class FormValidator {
     }
     protected function hasFile($key) {
         return 
-            isset($_FILES) && 
-            is_array($_FILES) && 
-            array_key_exists($key, $_FILES) && 
-            $_FILES[$key]['error'] !== UPLOAD_ERR_NO_FILE;
+            isset($this->files) && 
+            is_array($this->files) && 
+            array_key_exists($key, $this->files) && 
+            $this->files[$key]['error'] !== UPLOAD_ERR_NO_FILE;
     }
 
     protected function hasFileType($key, $types) {
