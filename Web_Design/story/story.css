@@ -1,0 +1,121 @@
+/* General */
+
+.new a{
+    font-size: larger;
+    font-weight: 300;
+}
+.new a:hover{
+    font-weight: bolder;
+}
+
+.edit a{
+    font-weight: 300;
+}
+.edit a:hover{
+    font-weight: bolder;
+}
+.wel, .cho{
+    display: none;
+}
+
+/* Set the list image as background image*/
+/*li::before {
+    /* content: '';
+    display: inline-block;
+    margin-right: 10px; */
+
+    /* Height of the list image*/
+    /* height: 20px; */
+
+    /* Width of the list image*/
+    /* width: 20px;
+    background-image: url('../spiral.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; */
+/*}*/
+
+/* style for flash_message */
+.alert {
+border: 1px solid transparent;
+border-radius: .25rem;
+padding: .75rem 1.25rem;
+margin-bottom: 1rem;
+}
+.alert-success {
+    font-weight: bold;
+    color: #33691E;
+    background-color: #B1FF91;
+    border-color: #33691E;
+}
+.alert-failed {
+    font-weight: bold;
+    color: #FC0029;
+    background-color: #FEB1C1;
+    border-color: #FC0029;
+    }
+
+/* Related to the tab.php */
+h1{
+    text-align: center;
+    /* background-color: #ffe6d9;  */
+    background-color: #cbf7ff; 
+    border: 2px solid #66FFFF;
+}
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, td {
+    border: 1px solid black;
+}
+th{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+tr:hover{
+    background-color: rgbA(255, 255, 255, 0.5);
+}
+td {
+    padding: 3px;
+    text-align: left;
+}
+/* table heads */
+th, .thd{
+    background-color: #cbf7ff;
+}
+th, .act{
+    background-color:  #66FFFF;
+}
+/* td */
+.hed, .art, .url, .dep, .sho{
+    background-color: #f1fbff;
+}
+
+.sat, .aut, .cat, .loc, .crt, .upt{
+    background-color: #f1fbff;
+    text-align: center;
+}
+.an{
+    background-color: #CCFFFF;
+    text-align: center;
+}
+
+/* story_create.php */
+
+.form-delete {
+    display: inline;
+}
+
+/* Related to story_edit.php */
+    form{
+        margin-bottom: 5px;
+    }
+    /* error message in story_edit and story_create.php*/
+    .error {
+        color:red;
+        text-decoration: underline; 
+        margin: 5px;
+    }
