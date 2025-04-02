@@ -46,7 +46,7 @@ echo "</pre>";
     </head>
 
     <body>
-        <p class = "edit"><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
+        <?php require_once "../etc/edit_navbar.php";?>
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new story -->
         <h2>New Story Form</h2>
@@ -143,7 +143,7 @@ echo "</pre>";
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>
             <!-- click on cancel to back to the All Stories page -->
-            <a href="story_tab.php">Cancel</a>
+            <a href="story_tab.php">Go Back</a>
         </form>
     </body>
 </hmtl>

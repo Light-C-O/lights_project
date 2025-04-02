@@ -47,7 +47,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <p class = "edit"><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
+    <?php require_once "../etc/edit_navbar.php";?>
     <?php require_once "../etc/flash_message.php";?>
         <h2>Edit the Story Form</h2>
         <!-- go to update when clicking the submit button -->
@@ -134,7 +134,7 @@ catch(Exception $ex) {
             <!-- once clicked, it will go to the story_update.php -->
             <button type="submit">Update</button>
             <!-- Will discard the new input, take the default input and go mack to the story_tab.php unchanged -->
-            <a href="story_tab.php">Cancel</a>
+            <a href="story_tab.php">Go Back</a>
         </form>
     </body>
 </html>

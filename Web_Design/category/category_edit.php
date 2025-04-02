@@ -33,7 +33,7 @@ catch(Exception $ex) {
     </head>
 
     <body>
-    <p class = "edit"><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
+        <?php require_once "../etc/edit_navbar.php";?>
         <h2>Edit the Category Form</h2>
         <!-- go to update when clicking the submit button -->
         <form action="category_update.php" method="POST">
@@ -47,7 +47,7 @@ catch(Exception $ex) {
             <!-- once clicked, it will go to the course_update.php -->
             <button type="submit">Update</button>
             <!-- Will discard the new input, take the default input and go mack to the category_tab.php unchanged -->
-            <a href="category_tab.php">Cancel</a>
+            <a href="category_tab.php">Go Back</a>
         </form>
         <?php require_once "../etc/flash_message.php";?>
     </body>

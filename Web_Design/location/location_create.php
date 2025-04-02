@@ -16,7 +16,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <body>
         <?php require_once "../etc/edit_navbar.php";?>
-        <p class = "edit" ><a href="<?=$import?>etc/edit_navbar.php">Edit Another Section</a></p>
         <?php require_once "../etc/flash_message.php";?>
         <!-- Create in a new location -->
         <h2>New Location Form</h2>
@@ -30,7 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>
             <!-- click on cancel to back to the All Locations page -->
-            <a href="location_tab.php">Cancel</a>
+            <a href="location_tab.php">Go Back</a>
         </form>
     </body>
 </hmtl>

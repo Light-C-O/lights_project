@@ -2,7 +2,7 @@
 require_once "../etc/config.php";
 require_once "../etc/flash_message.php";
 
-const UPLOAD_DIR = "Web_Design/images/";
+const UPLOAD_DIR = "image/";
 
 function makeParagraphs($text) {
     $sentences = explode("\n", $text);
