@@ -59,7 +59,7 @@ require_once 'config.php';
         <li><a href="<?=$import?>category/category_tab.php">Category</a></li>
         <li><a href="<?=$import?>author/author_tab.php">Author</a></li>
         <li><a href="<?=$import?>location/location_tab.php">Location</a></li>
-        <li><a href="<?=$import?>js-form-validation/js_author_demo.php">Js Demo</a></li>
+        <li><a href="<?=$import?>js-form-validation/js_author_demo.html">Js Demo</a></li>
     </ul>
 </body>
 </html>
