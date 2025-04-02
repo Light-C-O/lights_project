@@ -53,7 +53,7 @@ catch(Exception $ex) {
             <!-- once clicked, it will go to the author_update.php -->
             <button type="submit">Update</button>
             <!-- Will discard the new input, take the default input and go mack to the table.php unchanged -->
-            <a href="author_tab.php">Go Back</a>
+            <a href="author_tab.php">Cancel</a>
         </form>
         <?php require_once "../etc/flash_message.php";?>
     </body>

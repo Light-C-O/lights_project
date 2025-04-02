@@ -14,14 +14,14 @@ catch(Exception $e){
     exit();
 }
 
-echo "<pre>";
-if (array_key_exists("form-data", $_SESSION)) {
-    print_r($_SESSION["form-data"]);
-}
-if (array_key_exists("form-errors", $_SESSION)) {
-    print_r($_SESSION["form-errors"]);
-}
-echo "</pre>";
+// echo "<pre>";
+// if (array_key_exists("form-data", $_SESSION)) {
+//     print_r($_SESSION["form-data"]);
+// }
+// if (array_key_exists("form-errors", $_SESSION)) {
+//     print_r($_SESSION["form-errors"]);
+// }
+// echo "</pre>";
 
 //pull out all the info from classs
 // $id = $_GET["id"];
@@ -56,11 +56,6 @@ echo "</pre>";
                 <input type="text" id="headline" name="headline" value="<?= old('headline') ?>" />
                 <span class="error"><?= error('headline') ?></span>
             </div>
-            <!--<div>
-                //Input headline for the story, place an error if the requirement was not met
-                <lavel for="headline">Headline:
-                <input id="healine" type="text" name="headline" value="<?= old("headline") ?>"><span class=" error"><?= error("headline") ?><span>
-            </div>-->
             <div>
                 <!--Input short_headline for the story, place an error if the requirement was not met-->
                 <label for="short_headline">Short Headline:<label>
@@ -69,13 +64,13 @@ echo "</pre>";
 
             <div>
                 <label for="status">Status:</label>
-                <input id="status" type="radio" name="status" value="0"<?= chosen("status", "Live") ? "checked" : "" ?>>Live
-                <input type="radio" name="status" value="1"<?= chosen("status", "Not Live") ? "checked" : "" ?>>Not Live
+                <input id="status" type="radio" name="status" value="0"<?= chosen("status", "0") ? "checked" : "" ?>>Live
+                <input type="radio" name="status" value="1"<?= chosen("status", "1") ? "checked" : "" ?>>Not Live
             </div>
             <div>
                 <!---Input article for the story, place an error if the requirement was not met-->
                 <label for="above">Article:</label><br>
-                <textarea rows= "4" cols="50" class = "overglow" type="text" name="article" id="above" placeholder="Write the article here..." value="<?= old("article") ?>"></textarea><span class=" error"><?= error("article") ?><span>
+                <textarea  id="above" placeholder="Write the article here..." rows= "4" cols="50" type="text" name="article" ><?= old("article") ?></textarea><span class=" error"><?= error("article") ?><span>
             </div>
             <div>
                 <!-- Input img_url for the story, place an error if the requirement was not met-->
@@ -143,7 +138,7 @@ echo "</pre>";
             <!-- Once you press on the submit button, it goes to store, if there are errors, it comes back to create and shows the errors made-->
             <button type="submit">Store</button>
             <!-- click on cancel to back to the All Stories page -->
-            <a href="story_tab.php">Go Back</a>
+            <a href="story_tab.php">Cancel</a>
         </form>
     </body>
 </hmtl>

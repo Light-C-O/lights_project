@@ -1,5 +1,5 @@
 <?php
-require_once "../../etc/config.php";
+require_once "../etc/config.php";
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

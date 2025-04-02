@@ -47,7 +47,7 @@ catch(Exception $ex) {
             <!-- once clicked, it will go to the course_update.php -->
             <button type="submit">Update</button>
             <!-- Will discard the new input, take the default input and go mack to the location_tab.php unchanged -->
-            <a href="location_tab.php">Go Back</a>
+            <a href="location_tab.php">Cancel</a>
         </form>
         <?php require_once "../etc/flash_message.php";?>
     </body>

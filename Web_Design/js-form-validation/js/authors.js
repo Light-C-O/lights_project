@@ -1,5 +1,5 @@
 import AuthorFormValidator from "./classes/AuthorFormValidator.js";
-import AuthorDetails from "./components/AuthorDetails.js";
+// import AuthorDetails from "./components/AuthorDetails.js";
 
 document.addEventListener("DOMContentLoaded", function(event){
     let form = document.querySelector('#form-author');
@@ -60,8 +60,4 @@ document.addEventListener("DOMContentLoaded", function(event){
         }
 
     }
-
-    // function navPath{
-
-    // }
 });

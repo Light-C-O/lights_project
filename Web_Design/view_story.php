@@ -47,9 +47,9 @@ catch (Exception $e) {
                 <h1><?= $s->headline ?></h1>
                 <p><img src="<?= $s->img_url ?>" /></p>
                 <div>
-                <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
-                <p class = "author">By: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-                <p class ="fullArticle"><?= $s->article ?></p>
+                    <p class="imageDescription"><i>Image: <?= $s->img_description?></i></p>
+                    <p class = "author">By: <?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                    <p class ="fullArticle"><?= $s->article ?></p>
                 </div>
 
                 <div class = "bottom_info">

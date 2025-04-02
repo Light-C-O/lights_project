@@ -26,12 +26,6 @@ try {
 
     //it is valid, meaning the information the user hs enter had reached the requirements, 
     if($valid) {
-        // $data = $validator->data();
-        //make the new story
-        // $story =  new Story($data);
-        // save it 
-        // $story->save();
-        
         // save the uploaded file to the server
         $img_file = new File($_FILES["img_url"]);
         $extension = $img_file->getExtension();
@@ -44,9 +38,8 @@ try {
         $story->img_url = 'images/' . $filename;
         $story->save();
 
-        // redirect the browser to the success page
-        // redirect("view_story.php?id=" . $story->id);
-        // redirect("story_tab.php?id=" . $story->id);
+
+
 
 
 
