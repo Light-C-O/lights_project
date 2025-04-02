@@ -7,33 +7,9 @@
 .new a:hover{
     font-weight: bolder;
 }
-
-.edit a{
-    font-weight: 300;
-}
-.edit a:hover{
-    font-weight: bolder;
-}
 .wel, .cho{
     display: none;
 }
-
-/* Set the list image as background image*/
-/*li::before {
-    /* content: '';
-    display: inline-block;
-    margin-right: 10px; */
-
-    /* Height of the list image*/
-    /* height: 20px; */
-
-    /* Width of the list image*/
-    /* width: 20px;
-    background-image: url('../spiral.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; */
-/*}*/
 
 /* style for flash_message */
 .alert {
@@ -58,7 +34,6 @@ margin-bottom: 1rem;
 /* Related to the tab.php */
 h1{
     text-align: center;
-    /* background-color: #ffe6d9;  */
     background-color: #cbf7ff; 
     border: 2px solid #66FFFF;
 }
