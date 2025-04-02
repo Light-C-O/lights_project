@@ -2,7 +2,7 @@
 require_once "../etc/config.php";
 require_once "../etc/flash_message.php";
 
-const UPLOAD_DIR = "image/";
+const UPLOAD_DIR = "../images/";
 
 function makeParagraphs($text) {
     $sentences = explode("\n", $text);
@@ -41,12 +41,12 @@ try {
         // save the form data to the database
         $story = new Story($validator->data());
         $story->article = makeParagraphs($story->article);
-        $story->img_url = $filepath;
+        $story->img_url = 'images/' . $filename;
         $story->save();
 
         // redirect the browser to the success page
         // redirect("view_story.php?id=" . $story->id);
-        redirect("story_tab.php?id=" . $story->id);
+        // redirect("story_tab.php?id=" . $story->id);
 
 
 
@@ -59,7 +59,7 @@ try {
             "type" =>"success" 
         ];
         //then go back to the story_tab page see it the new story
-        redirect("story_tab.php");
+        redirect("story_tab.php?id=" . $story->id);
     }
     else {
         //if there is a problem, show the errors made and send a flash error message

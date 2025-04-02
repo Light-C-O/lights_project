@@ -1,6 +1,8 @@
 <?php
 require_once "../etc/config.php";
 
+const UPLOAD_DIR = "../images/";
+
 try{
     if($_SERVER["REQUEST_METHOD"] !=="POST") {
         throw new Exception("Invaild request method");
@@ -16,18 +18,40 @@ try{
         throw new Exception("Story not found");
     }
     //input the clas into $validator
-    $validator = new StoryFormValidator($_POST);
+    $validator = new StoryFormValidator($_POST, $_FILES);
     //check if the input the user is has reach the requirements
-    $valid = $validator->validate();
+    $fileRequired = false;
+    $valid = $validator->validate($fileRequired);
     //if it did
     if($valid) {
+
+        
+        
         //edit and input the changes with the already existing data
         $data = $validator->data();
         $story->headline = $data["headline"];
         $story->short_headline = $data["short_headline"];
         $story->status = $data["status"];
         $story->article = $data["article"];
-        $story->img_url = $data["img_url"];
+
+        if(is_uploaded_file($_FILES["img_url"]["tmp_name"])){
+            $img_file = new File($_FILES["img_url"]);
+            $extension = $img_file->getExtension();
+            $filename = "photo-". strtotime(date('Y-m-d H:i:s')) . '-' . uniqid() . '.' . $extension;
+            $filepath = $img_file->move(UPLOAD_DIR, $filename);
+
+            //delete old image
+            $oldImage = "../" . $story->img_url;
+
+
+            if (file_exists($oldImage)) {
+                unlink($oldImage);
+            } 
+            
+
+            $story->img_url = 'images/' . $filename;
+
+        }
         $story->img_description = $data["img_description"];
         $story->author_id = $data["author_id"];
         $story->category_id = $data["category_id"];
@@ -43,7 +67,7 @@ try{
             "message" => "Story has been updated",
             "type" =>"success" 
         ];
-    redirect("story_tab.php");
+        redirect("story_tab.php?id=" . $story->id);
     }
     else {
         //if everything did not go well, it will go to the story_edit.php and user should settle the errors shown

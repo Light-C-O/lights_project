@@ -78,9 +78,9 @@ catch(Exception $ex) {
             <div>
                 <!-- Image:
                 <input type="text" name="img_url" value="<?= old("img_url", $story->img_url) ?>"><span class="error"><?= error("img_url") ?></span> -->
-
+                <img src="<?= $import.$story->img_url ?>" width="100">
                 <label for="img_url">Image</label>
-                <input type="file" id="img_url" name="img_url" value="<?= old("img_url", $story->img_url) ?>" />
+                <input type="file" id="img_url" name="img_url" />
                 <span class="error"><?= error('img_url') ?></span>
             </div>
             <div>

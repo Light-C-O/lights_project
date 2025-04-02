@@ -5,7 +5,7 @@ class StoryFormValidator extends FormValidator {
     }
 
     //The requirments to made
-    public function validate() {
+    public function validate($fileRequired = true) {
         //Table -- courses
 
         //Headline
@@ -39,15 +39,23 @@ class StoryFormValidator extends FormValidator {
         // }
         $maxFileSize = 1 * 1024 * 1024; // 1 MB
         $allowedTypes = ['image/jpg', 'image/JPG', 'image/jpeg', 'image/JEEG','image/png', 'image/PNG', 'image/gif', 'image/GIF'];
-        if (!$this->hasFile("img_url")) {
-            $this->errors["img_url"] = "Please choose an image";
+
+        if($fileRequired){
+            if (!$this->hasFile("img_url")) {
+                $this->errors["img_url"] = "Please choose an image";
+            }
         }
-        else if (!$this->hasFileType("img_url", $allowedTypes)) {
-            $this->errors["img_url"] = "Please choose a valid image type [jpg, JPG, jpeg, JPEG, png, PNG, gif, GIF]";
+
+        if ($this->hasFile("img_url")) {
+            if (!$this->hasFileType("img_url", $allowedTypes)) {
+                $this->errors["img_url"] = "Please choose a valid image type [jpg, JPG, jpeg, JPEG, png, PNG, gif, GIF]";
+            }
+            else if (!$this->hasFileSize("img_url", $maxFileSize)) {
+                $this->errors["img_url"] = "Please choose an image with a size less than 1 MB";
+            }
         }
-        else if (!$this->hasFileSize("img_url", $maxFileSize)) {
-            $this->errors["img_url"] = "Please choose an image with a size less than 1 MB";
-        }
+
+        
 
         //Image description
         if(!$this->isPresent("img_description")) {
