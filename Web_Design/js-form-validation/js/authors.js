@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event){
         let valid = validator.validate();
         if(valid){
             try{
-                let response = await storeAuthorDemo(validator.data);
+                let response = await storeAuthor_Demo(validator.data);
                 if (response.status == true){
                     insertRow(validator.data);
                     form.reset();
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(event){
                 }
             }
             catch (e){
-                console.log(e);
+                // console.log(e);
                 alert("Error storing author");
             }
         }
@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded", function(event){
 
             switch(i){
                 case 0: text = data.first_name; break;
-                case 1: text = last_name; break;
+                case 1: text = data.last_name; break;
             }
             cell.innerHTML = text;
         }
 
     }
 
-    async function storeAuthorDemo(data) {
+    async function storeAuthor_Demo(data) {
         const url = "php/js_author_demo_store.php";
         const response = await fetch(url, {
             method: "POST",

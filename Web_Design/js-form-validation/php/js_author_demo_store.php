@@ -4,8 +4,8 @@ require_once './etc/config.php';
 $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
-$author_demo = new Author_Demo($data);
-$author_demo->save();
+$course = new Course($data);
+$course->save();
 
 $response = [
     "status" => true,

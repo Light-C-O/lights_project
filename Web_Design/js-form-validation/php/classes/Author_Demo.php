@@ -16,10 +16,10 @@ class Author_Demo {
     }
 
     public function save() {
+        $db = null;
         try {
             $db = new DB();
             $db->open();
-            $conn = $db->getConnection();
         
             $params = [
                 ":first_name" => $this->first_name,
@@ -27,7 +27,8 @@ class Author_Demo {
             ];
 
             if ($this->id === null) {
-                $sql = "INSERT INTO authors_demo" .
+                $sql = 
+                "INSERT INTO authors_demo" .
                 "(first_name, last_name)" .
                 "VALUES (:first_name, :last_name)";
             }
@@ -42,15 +43,19 @@ class Author_Demo {
             }
             $stmt = $conn->prepare($sql);
             $status = $stmt->execute($params);
-        
-            if (!$status) {
+
+            if(!$status) {
                 $error_info = $stmt->errorInfo();
-                $message = "SQLSTATE error code = ".$error_info[0]."; error message = ".$error_info[2];
-                throw new Exception("Database error executing database query: " . $message);
+                $message = sprintf(
+                    "SQLSTATE error code: %d; error message: %s",
+                $error_info[0],
+                $error_info[2]
+                );
+                throw new Exception($message);
             }
         
-            if ($stmt->rowCount() !== 1) {
-                throw new Exception("Failed to save author_demo.");
+            if($stmt->rowCount() !==1) {
+                throw new Exception("[AUTHOR REMAINS UNCHANGED]");
             }
         
             if ($this->id === null) {
@@ -70,7 +75,6 @@ class Author_Demo {
             if ($this->id !== null) {
                 $db = new DB();
                 $db->open();
-                $conn = $db->getConnection();
         
                 $sql = "DELETE FROM authors_demo WHERE id = :id" ;
                 $params = [
@@ -79,15 +83,22 @@ class Author_Demo {
                 $stmt = $conn->prepare($sql);
                 $status = $stmt->execute($params);
         
-                if (!$status) {
+                //There is no status in the first place throw out a message of error
+                if(!$status) {
                     $error_info = $stmt->errorInfo();
-                    $message = "SQLSTATE error code = ".$error_info[0]."; error message = ".$error_info[2];
-                    throw new Exception("Database error executing database query: " . $message);
+                    $message = sprintf(
+                        "SQLSTATE error code: %d; error message: %s",
+                        $error_info[0],
+                        $error_info[2]
+                    );
+                    throw new Exception($message);
                 }
-        
-                if ($stmt->rowCount() !== 1) {
-                    throw new Exception("Failed to delete author_demo.");
+                //If no row has been affected, which means nothing had been deleted, throw out a message that the course has not been deleted, therefore course still remains
+                if($stmt->rowCount() !==1) {
+                    throw new Exception("[AUTHOR REMAINS UNCHANGED]");
                 }
+                //the id will now be null if it has been deleted succesfully
+                $this->id = null;
             }
         }
         finally {
@@ -103,26 +114,40 @@ class Author_Demo {
         try {
             $db = new DB();
             $db->open();
-            $conn = $db->getConnection();
 
             $sql = "SELECT * FROM authors_demo";
             $stmt = $conn->prepare($sql);
             $status = $stmt->execute();
 
-            if (!$status) {
+            //When excuting, you get a status that will be either true or false
+            //There is no status (false), something went wrong 
+            if(!$status) {
                 $error_info = $stmt->errorInfo();
-                $message = "SQLSTATE error code = ".$error_info[0]."; error message = ".$error_info[2];
-                throw new Exception("Database error executing database query: " . $message);
+                $message = sprintf(
+                    "SQLSTATE error code: %d; error message: %s",
+                    $error_info[0],
+                    $error_info[2]
+                );
+            //Then throw out a message of error
+                throw new Exception($message);
             }
 
-            if ($stmt->rowCount() !== 0) {
+
+            //checks if the first row is not 0, since we are not using 0
+            if($stmt->rowCount() !== 0) {
+                //Fetches the first row on the table
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                
                 while ($row !== FALSE) {
+                    //fetch row and using to create a Author_Demo object
                     $author_demo = new Author_Demo($row);
+                    //put it into this array below
                     $authors_demo[] = $author_demo;
 
+                    //this reads the next row
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 }
+
             }
         }
         finally {
@@ -149,7 +174,7 @@ class Author_Demo {
             $stmt = $conn->prepare($sql);
             $status = $stmt->execute($params);
 
-            if (!$status) {
+            if(!$status) {
                 $error_info = $stmt->errorInfo();
                 $message = sprintf(
                     "SQLSTATE error code: %d; error message: %s",
