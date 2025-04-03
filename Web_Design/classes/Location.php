@@ -41,7 +41,7 @@ class Location {
             }
         
             if ($stmt->rowCount() !== 1) {
-                throw new Exception("Failed to save location.");
+                throw new Exception("[LOCATION REMAINS UNCHANGED]");
             }
         
             if ($this->id === null) {

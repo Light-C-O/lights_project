@@ -30,6 +30,7 @@ class Story {
             $this->category_id = $props["category_id"];
             $this->location_id = $props["location_id"];
             
+            
             if (array_key_exists("created_at", $props)) {
                 $this->created_at = $props["created_at"];
             }
@@ -95,7 +96,7 @@ class Story {
             }
         
             if ($stmt->rowCount() !== 1) {
-                throw new Exception("Failed to save story.");
+                throw new Exception("STORY REMAINS UNCHANGED");
             }
         
             if ($this->id === null) {

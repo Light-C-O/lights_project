@@ -47,7 +47,7 @@ class Author {
             }
         
             if ($stmt->rowCount() !== 1) {
-                throw new Exception("Failed to save author.");
+                throw new Exception("[AUTHOR REMAINS UNCHANGED]");
             }
         
             if ($this->id === null) {

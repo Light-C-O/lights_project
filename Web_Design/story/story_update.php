@@ -24,9 +24,6 @@ try{
     $valid = $validator->validate($fileRequired);
     //if it did
     if($valid) {
-
-        
-        
         //edit and input the changes with the already existing data
         $data = $validator->data();
         $story->headline = $data["headline"];
@@ -34,6 +31,7 @@ try{
         $story->status = $data["status"];
         $story->article = $data["article"];
 
+        //the img_url uploader
         if(is_uploaded_file($_FILES["img_url"]["tmp_name"])){
             $img_file = new File($_FILES["img_url"]);
             $extension = $img_file->getExtension();
@@ -67,7 +65,7 @@ try{
             "message" => "Story has been updated",
             "type" =>"success" 
         ];
-        redirect("story_tab.php?id=" . $story->id);
+    redirect("story_tab.php");
     }
     else {
         //if everything did not go well, it will go to the story_edit.php and user should settle the errors shown

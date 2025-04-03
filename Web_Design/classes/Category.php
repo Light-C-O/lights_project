@@ -41,7 +41,7 @@ class Category {
             }
         
             if ($stmt->rowCount() !== 1) {
-                throw new Exception("Failed to save category.");
+                throw new Exception("[CATEGORY REMAINS UNCHANGED]");
             }
         
             if ($this->id === null) {

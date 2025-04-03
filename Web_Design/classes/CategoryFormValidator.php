@@ -6,7 +6,7 @@ class CategoryFormValidator extends FormValidator {
 
     //The requirments to made
     public function validate() {
-        //Table -- categories
+        //Table -- category
 
         //Name
         if(!$this->isPresent("name")) {

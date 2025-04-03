@@ -38,11 +38,11 @@ catch(Exception $ex) {
         <!-- go to update when clicking the submit button -->
         <form action="category_update.php" method="POST">
             <!-- hide the id of the category -->
-            <input type="hidden" name="id" value="<?= $category->id ?>">
+            <input type="hidden" name="id" value="<?= $category->id ?>"/>
             <p>
                 Name:
                 <!-- the old(); states that the former input will still be stored as a default -->
-                <input type="text" name="name" value="<?= old("name", $category->name) ?>"><span class="error"><?= error("name") ?></span>
+                <input type="text" name="name" value="<?= old("name", $category->name) ?>"/><span class="error"><?= error("name") ?></span>
             </p>
             <!-- once clicked, it will go to the course_update.php -->
             <button type="submit">Update</button>

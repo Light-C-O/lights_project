@@ -36,7 +36,7 @@ try{
             "message" => "Author has been updated",
             "type" =>"success" 
         ];
-    redirect("author_tab.php");
+    redirect("author_tab.php?id=" . $author->id);
     }
     else {
         //if everything did not go well, it will go to the author_edit.php and user should settle the errors shown

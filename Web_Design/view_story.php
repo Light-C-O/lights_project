@@ -11,7 +11,7 @@ try {
         throw new Exception("Story not found.");
     }
     $category = Category::findById($s->category_id);
-    $related_stories = Story::findByCategory($category->id, $options = array('limit' => 3, 'order_by' => 'updated_at', 'order' => 'DESC'));
+    $related_stories = Story::findByCategory($category->id, $options = array('limit' => 4, 'order_by' => 'updated_at', 'order' => 'DESC'));
 }
 catch (Exception $e) {
     echo $e->getMessage();

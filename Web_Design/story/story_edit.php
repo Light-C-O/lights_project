@@ -51,7 +51,7 @@ catch(Exception $ex) {
     <?php require_once "../etc/flash_message.php";?>
         <h2>Edit the Story Form</h2>
         <!-- go to update when clicking the submit button -->
-        <form action="story_update.php" method="post" enctype="multipart/form-data">
+        <form action="story_update.php" method="POST" enctype="multipart/form-data">
             <!-- hide the id of the story -->
             <input type="hidden" name="id" value="<?= $story->id ?>">
             <div>
