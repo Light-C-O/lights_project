@@ -5,19 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event){
     let table = document.querySelector('#table-authors');
     let tbody = table.querySelector("tbody");
     let btn = document.querySelector("#btn-submit");
+    // let btnd = document.querySelector("#btn-delete");
 
-    // let authorSelect = document.querySelector("#first_name");
-    // let authorOptions = authorSelect.options;
-    // authorOptions = Array.from(authorOptions);
-    // let authorOptionsArray = {};
-    // authorOptions.forEach((autOption) => {
-    //     let value = autOption.value;
-    //     let name = autOption.textContent;
-    //     if (value !== "") {
-    //         authorOptionsArray[value] = name;
-    //     }
-    // })
-    // console.log(authorOptionsArray);
 
     //Add an event listener for btn when it comes to click
     btn.addEventListener("click", async function(event){
@@ -47,6 +36,35 @@ document.addEventListener("DOMContentLoaded", function(event){
             validator.showErrors();
         }
     });
+
+    //add a buttn that deletes
+    // btnd.addEventListener("click", async function(event){
+    //     event.preventDefault();
+
+    //     let validator = new AuthorFormValidator(form);
+    //     validator.clearErrors();
+
+    //     let valid = validator.validate();
+    //     if(valid){
+    //         try{
+    //             let response = await deleteAuthor_Demo(validator.data);
+    //             if (response.status == true){
+    //                 insertRow(validator.data);
+    //                 form.reset();
+    //             }
+    //             else{
+    //                 throw new Exception ("Error deleting author");
+    //             }
+    //         }
+    //         catch (e){
+    //             // console.log(e);
+    //             alert("Error deleting author");
+    //         }
+    //     }
+    //     else{
+    //         validator.showErrors();
+    //     }
+    // });
 
     function insertRow(data){
         let row = tbody.insertRow();
@@ -78,4 +96,20 @@ document.addEventListener("DOMContentLoaded", function(event){
         const json = await response.json();
         return json;
     }
+
+    // async function deleteAuthor_Demo(data) {
+    //     const url = "php/js_author_demo_delete.php";
+    //     const response = await fetch(url, {
+    //         method: "POST",
+    //         body: JSON.stringify(data),
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         }
+    //     });
+    //     if (!response.ok) {
+    //         throw new Exception(`Response status: ${response.status}`);
+    //     }
+    //     const json = await response.json();
+    //     return json;
+    // }
 });

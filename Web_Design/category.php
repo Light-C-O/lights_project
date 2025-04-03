@@ -40,14 +40,15 @@ catch (Exception $e) {
         <link rel="stylesheet" href="css/style.css" />
 
 
-        <title>Stories: <?= $category->name ?></title>
+        <title>THE OUTLET<?= $category->name ?></title>
     </head>
     <body>
+        <div class = "newsTitle container-no-padding"><h1>THE OUTLET</h1></div>
         <?php require_once "./etc/navbar.php"; ?>
         <?php require_once "./etc/flash_message.php"; ?>
 
             <div class = "display container">
-                <h1>Stories: <?= $category->name ?></h1>
+                <h1><?= $category->name ?></h1>
             </div>
             <div class = "cat container-no-padding width-12">
                 <?php foreach ($stories as $s) { ?>

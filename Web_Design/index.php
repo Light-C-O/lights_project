@@ -91,11 +91,11 @@ catch (Exception $e) {
         <link rel="stylesheet" href="css/grid.css" />
         <link rel="stylesheet" href="css/style.css" />
 
-        <title>My stories</title>
+        <title>THE OUTLET</title>
     </head>
     <body>
+        <div class = "newsTitle container-no-padding"><h1>THE OUTLET</h1></div>
         <?php require_once "./etc/navbar.php"; ?>
-        <?php require_once "./etc/flash_message.php"; ?>
 
         <div class ="topTier container">
             <!--Big Top Sport Story-->

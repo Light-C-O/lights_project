@@ -19,7 +19,7 @@ class Author_Demo {
         $db = null;
         try {
             $db = new DB();
-            $db->open();
+            $conn = $db->open();
         
             $params = [
                 ":first_name" => $this->first_name,
@@ -74,7 +74,7 @@ class Author_Demo {
         try {
             if ($this->id !== null) {
                 $db = new DB();
-                $db->open();
+                $conn = $db->open();
         
                 $sql = "DELETE FROM authors_demo WHERE id = :id" ;
                 $params = [
@@ -113,7 +113,7 @@ class Author_Demo {
 
         try {
             $db = new DB();
-            $db->open();
+            $conn = $db->open();
 
             $sql = "SELECT * FROM authors_demo";
             $stmt = $conn->prepare($sql);
@@ -164,7 +164,6 @@ class Author_Demo {
 
         try {
             $db = new DB();
-            $db->open();
             $conn = $db->open();
 
             $sql = "SELECT * FROM authors_demo WHERE id = :id";

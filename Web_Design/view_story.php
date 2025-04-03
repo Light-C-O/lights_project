@@ -40,6 +40,7 @@ catch (Exception $e) {
         <title>Story</title>
     </head>
     <body>
+        <div class = "newsTitle container-no-padding"><h1>THE OUTLET</h1></div>
         <?php require_once "./etc/navbar.php"; ?>
         <?php require_once "./etc/flash_message.php"; ?>
         <div class = "seeStory container">
@@ -75,35 +76,32 @@ catch (Exception $e) {
         <div class = "related container-no-padding">
             <div class = "width-12">
                 <h2>Related Stories</h2>
-                <div class = "r_stories">
-                    <?php foreach ($related_stories as $rs) { ?>
-                        <?php if ($rs->id == $s->id) { continue; } ?>
-                        <a href="view_story.php?id=<?= $rs->id ?>">
-                        <div class="medium-port width-3">
-                            <div class="content">
-                                <?php
-                                    if ($s->status === 0){
-                                        echo(
-                                            "<button class='label'>
-                                                <span class='dot'></span>
-                                                <div class='live'>
-                                                    <p>Live</p>
-                                                </div>
-                                            </button>"
-                                        );
-                                    }
-                                ?>
-                                <img src="<?= $rs->img_url ?>">
-                                <p class="imageDescription"><i><?= $rs->img_description?></i></p>
-                                <h3 class="title"><?= $rs->short_headline ?></h3>
-                                <p class = "author">Author: <?= Author::findById($rs->author_id)->first_name . " " . Author::findById($rs->author_id)->last_name ?></p>
-                            </div>
-                        </div> 
-                        </a>
-                    <?php } ?>
-                </div>
             </div>
+                <?php foreach ($related_stories as $rs) { ?>
+                    <?php if ($rs->id == $s->id) { continue; } ?>
+                    <a class="width-3" href="view_story.php?id=<?= $rs->id ?>">
+                    <div class="medium-port ">
+                        <div class="content">
+                            <?php
+                                if ($s->status === 0){
+                                    echo(
+                                        "<button class='label'>
+                                            <span class='dot'></span>
+                                            <div class='live'>
+                                                <p>Live</p>
+                                            </div>
+                                        </button>"
+                                    );
+                                }
+                            ?>
+                            <img src="<?= $rs->img_url ?>">
+                            <p class="imageDescription"><i><?= $rs->img_description?></i></p>
+                            <h3 class="title"><?= $rs->short_headline ?></h3>
+                            <p class = "author">Author: <?= Author::findById($rs->author_id)->first_name . " " . Author::findById($rs->author_id)->last_name ?></p>
+                        </div>
+                    </div> 
+                    </a>
+                <?php } ?>
         </div>
-          
     </body>
 </html>

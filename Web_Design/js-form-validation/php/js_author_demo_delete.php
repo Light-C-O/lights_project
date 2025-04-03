@@ -4,8 +4,8 @@ require_once './etc/config.php';
 $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
-$author_demo = new Author_Demo($data);
-$author_demo->save();
+$author_demo = Author_Demo::findById($id);;
+$author_demo->delete();
 
 $response = [
     "status" => true,

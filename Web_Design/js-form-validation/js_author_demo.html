@@ -12,7 +12,6 @@
         <title>Authors Demo</title>
     </head>
     <body>
-        <!-- <p><a href= "edit_navbar.php">Go Back</a></p> -->
         <div class="container">
             <div class="width-12">
                 <h1>Authors</h1>
@@ -23,43 +22,73 @@
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
+                            <!-- <th>Action</th> -->
                     </thead>
                     <tbody>
                         <tr>
                             <td>Joel</td>
                             <td>Gunter</td>
+                            <!-- <td>             
+                                <form class="form-delete" action="js_author_demo_delete.php" method="post">
+                                    <input type="hidden" name="id" value="">
+                                    <input type="submit" id="btn-delete" value="Delete">
+                                </form>
+                            </td> -->
                         </tr>
                         <tr>
                             <td>Jim</td>
                             <td>Thomas</td>
-                            
+                            <!-- <td>             
+                                <form class="form-delete" action="js_author_demo_delete.php" method="post">
+                                    <input type="hidden" name="id" value="">
+                                    <input type="submit" id="btn-delete" value="Delete">
+                                </form>
+                            </td> -->
                         </tr>
                         <tr>
                             <td>Kim</td>
                             <td>Coghill</td>
+                            <!-- <td>             
+                                <form class="form-delete" action="js_author_demo_delete.php" method="post">
+                                    <input type="hidden" name="id" value="">
+                                    <input type="submit" id="btn-delete" value="Delete">
+                                </form>
+                            </td> -->
                         </tr>
                         <tr>
                             <td>Ailbhe</td>
                             <td>Conneely</td>
+                            <!-- <td>             
+                                <form class="form-delete" action="js_author_demo_delete.php" method="post">
+                                    <input type="hidden" name="id" value="">
+                                    <input type="submit" id="btn-delete" value="Delete">
+                                </form>
+                            </td> -->
                         </tr>
                         <tr>
                             <td>Barry</td>
                             <td>Roche</td>
+                            <!-- <td>             
+                                <form class="form-delete" action="js_author_demo_delete.php" method="post">
+                                    <input type="hidden" name="id" value="">
+                                    <input type="submit" id="btn-delete" value="Delete">
+                                </form>
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="width-4">
                 <h2>Add Author</h2>
-                <form id="form-author" action="js_author_demo_store.php" method="POST">
+                <form id="form-author" action="js_author_demo_store.php" method="POST" autocomplete="on">
                     <div class="form-group">
-                        <label class="form-label">First Name: </label>
-                        <input type="text" name="first_name" id="first_name" class="form-input" value="">
+                        <label for="first_name" class="form-label">First Name: </label>
+                        <input type="text" name="first_name" id="first_name" class="form-input" value=""/>
                         <div class="error" id="error-first_name"></div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Last Name: </label>
-                        <input type="text" name="last_name" id="last_name" class="form-input" value="">
+                        <label for="last_name" class="form-label">Last Name: </label>
+                        <input type="text" name="last_name" id="last_name" class="form-input" value=""/>
                         <div class="error" id="error-last_name"></div>
                     </div>
                         <button type="submit" id="btn-submit">Submit</button>

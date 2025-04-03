@@ -6,6 +6,16 @@ h1, h2, h3, h4, h5, h6{
     font-family: "PlayFair Display";
     margin-top: 0%;
 }
+.newsTitle{
+    grid-template-columns: none;
+    text-align: center;
+    border-style: outset;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.newsTitle h1{
+    font-size: 50px;
+}
 p{
     font-family: "Roboto";
     font-size: 12px;
@@ -379,6 +389,9 @@ h3{
     flex-direction: row;
     justify-content: space-between;
 }
+.cat .insider p{
+    font-family: "Sahitya", serif;
+}
 .cat .dates{
     display: flex;
     gap: 20px;
@@ -430,10 +443,6 @@ p, .fullArticle {
     font-family: "Sahitya", serif;
     margin-bottom: 0px;
 }
-.related .r_stories{
-    display: flex;
-    flex-direction: row;
-}
 .related h2{
     margin-bottom: 8px;
 }
@@ -442,6 +451,10 @@ p, .fullArticle {
     flex-direction: column;
     position: relative;
 }
-.r_stories .medium-port .label{
+.related .medium-port img{
+    object-fit: cover;
+    width: 100%;
+}
+.related.medium-port .label{
     position: absolute;
 }
