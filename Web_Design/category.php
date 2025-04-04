@@ -11,7 +11,7 @@ try {
         throw new Exception("Category not found.");
     }
     // $stories = Story::findByCategory($categoryId);
-    $stories = Story::findByCategory($categoryId, $options = array('limit' => 8));
+    $stories = Story::findByCategory($categoryId, $options = array('limit' => 10));
     // $stories = Story::findByCategory($categoryId, $options = array('limit' => 3, 'offset' => 1));
 }
 catch (Exception $e) {

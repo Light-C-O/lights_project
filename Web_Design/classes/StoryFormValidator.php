@@ -34,11 +34,8 @@ class StoryFormValidator extends FormValidator {
         }
 
         //Image upload
-        // if(!$this->isPresent("img_url", ("/^images\/$/") )) {
-        //     $this->errors["img_url"] = "Please state the image Format: [images/{image-name.type}]";
-        // }
         $maxFileSize = 1 * 1024 * 1024; // 1 MB
-        $allowedTypes = ['image/jpg', 'image/JPG', 'image/jpeg', 'image/JEEG','image/png', 'image/PNG', 'image/gif', 'image/GIF'];
+        $allowedTypes = ['image/jpg', 'image/JPG', 'image/jpeg', 'image/JEPG','image/png', 'image/PNG', 'image/gif', 'image/GIF'];
 
         if($fileRequired){
             if (!$this->hasFile("img_url")) {
