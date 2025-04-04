@@ -2,6 +2,7 @@
 
 class Story {
 
+    //State variable
     public $id;
     public $headline;
     public $short_headline;
@@ -15,6 +16,7 @@ class Story {
     public $created_at;
     public $updated_at;
 
+    //Contruct
     public function __construct($props = null) {
         if ($props != null) {
             if (array_key_exists("id", $props)) {
@@ -40,8 +42,10 @@ class Story {
         }
     }
 
+    //Save
     public function save() {
         try {
+            //open database
             $db = new DB();
             $db->open();
             $conn = $db->getConnection();
@@ -110,6 +114,7 @@ class Story {
         }
     }
 
+    //Delete
     public function delete() {
         $db = null;
         try {
@@ -143,7 +148,9 @@ class Story {
         }
     }
 
+    //Find waht is in the parameeters
     private static function find($sql, $params, $options = NULL) {
+        //input array in &story
         $stories = array();
 
         try {

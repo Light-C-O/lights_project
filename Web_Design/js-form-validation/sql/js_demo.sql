@@ -24,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `authors_demo`
+-- Table structure for table `author_demos`
 --
 
-CREATE TABLE `authors_demo` (
+CREATE TABLE `author_demos` (
   `id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `authors_demo`
+-- Dumping data for table `author_demos`
 --
 
-INSERT INTO `authors_demo` (`id`, `first_name`, `last_name`) VALUES
+INSERT INTO `author_demos` (`id`, `first_name`, `last_name`) VALUES
 (1, 'Joel', 'Gunter'),
 (2, 'Jim', 'Thomas'),
 (3, 'Kim', 'Coghill'),
@@ -49,9 +49,9 @@ INSERT INTO `authors_demo` (`id`, `first_name`, `last_name`) VALUES
 --
 
 --
--- Indexes for table `authors_demo`
+-- Indexes for table `author_demos`
 --
-ALTER TABLE `authors_demo`
+ALTER TABLE `author_demos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -59,9 +59,9 @@ ALTER TABLE `authors_demo`
 --
 
 --
--- AUTO_INCREMENT for table `authors_demo`
+-- AUTO_INCREMENT for table `author_demos`
 --
-ALTER TABLE `authors_demo`
+ALTER TABLE `author_demos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
